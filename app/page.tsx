@@ -1,113 +1,152 @@
+import { FC } from "react";
 import Image from "next/image";
+import SectionTitle from "@/components/SectionTitle";
+import SubsectionTitle from "@/components/SubsectionTitle";
+import Paragraph from "@/components/Paragraph";
+import Button from "@/components/Button";
+import Card from "@/components/Card";
+import Footer from "@/components/Footer";
+import { Book, Briefcase, Users, Award, Code } from "lucide-react";
 
-export default function Home() {
+const Home: FC = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <div className="bg-gray-50 text-gray-800">
+      <main className="pt-16">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-r bg-[#F66813] text-white py-32 px-4 overflow-hidden">
+          <div className="absolute inset-0 opacity-5">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
+              src="/cover.png"
+              alt="Cover Image"
+              fill
               priority
+              className="object-cover z-0"
             />
-          </a>
-        </div>
-      </div>
+          </div>
+          <div className="container mx-auto text-center relative z-10">
+            <h1 className="text-6xl font-bold mb-6 animate-fade-in-up">
+              Princeton AI Alignment
+            </h1>
+            <p className="text-2xl mb-12 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
+              A community working to reduce risks from advanced AI.
+            </p>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+            <Button href="#mission">Learn More</Button>
+          </div>
+        </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        {/* Our Mission Section */}
+        <section id="mission" className="py-28 px-6 bg-white">
+          <div className="container mx-auto max-w-4xl">
+            <SectionTitle>Our Mission</SectionTitle>
+            <div className="space-y-8">
+              <Paragraph>
+                AI may soon radically transform our society, for better or
+                worse. Experts broadly expect significant progress in AI during
+                our lifetimes, potentially to the point of achieving human-level
+                intelligence. Digital systems with such capabilities would
+                revolutionize every aspect of our society, from business, to
+                politics, to culture. Worryingly, these machines will not be
+                beneficial by default, and public interest is often in tension
+                with the incentives of the many actors developing this
+                technology.
+              </Paragraph>
+              <Button href="#learn-more">Learn More</Button>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+              <SubsectionTitle>
+                We work to ensure AI is developed to benefit humanity&apos;s future
+              </SubsectionTitle>
+              <Paragraph>
+                Absent a dedicated safety effort, AI systems will outpace our
+                ability to explain their behavior, instill our values in their
+                objectives, and to build robust safeguards against their
+                failures. Our organization empowers students and researchers at
+                Princeton to contribute to the field of AI safety.
+              </Paragraph>
+              <Button href="#mailing-list">Join Mailing List</Button>
+            </div>
+          </div>
+        </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+        {/* Workshops Section */}
+        <section id="workshops" className="py-28 px-6 bg-gray-100">
+          <div className="container mx-auto">
+            <SectionTitle>Workshops</SectionTitle>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="space-y-6">
+                <Paragraph>
+                  Hands-on workshops to learn about the engineering side of AI
+                  safety.
+                </Paragraph>
+                <Button href="#view-notebooks">View Notebooks</Button>
+              </div>
+              <div className="bg-white p-8 rounded-lg shadow-xl">
+                <Image
+                  src="/sae-cover.png"
+                  alt="Workshop illustration"
+                  width={1940}
+                  height={1940}
+                  className="w-full h-auto rounded"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        {/* Get Involved Section */}
+        <section id="get-involved" className="py-28 px-6 bg-white">
+          <div className="container mx-auto">
+            <SectionTitle>Get Involved</SectionTitle>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card
+                icon={Book}
+                title="Introductory Seminars"
+                description="Join our 8-week reading and discussion groups diving into AI alignment and governance."
+                linkText="Apply Now"
+                href="#introductory-seminars"
+              />
+              <Card
+                icon={Users}
+                title="Advanced Reading Group"
+                description="Deepen your understanding of AI alignment and related research in our advanced group."
+                linkText="Learn More"
+                href="#advanced-reading-group"
+              />
+              <Card
+                icon={Code}
+                title="Research Opportunities"
+                description="Contribute to AI alignment research with guidance from experienced mentors."
+                linkText="Contact Us"
+                href="#contact-us"
+              />
+              <Card
+                icon={Briefcase}
+                title="Jobs in AI Safety"
+                description="Explore career opportunities in AI Safety at leading organizations."
+                linkText="View Positions"
+                href="#ai-safety-positions"
+              />
+              <Card
+                icon={Award}
+                title="Contests and Hackathons"
+                description="Participate in worldwide AI safety competitions and collaborative research events."
+                linkText="Join Events"
+                href="#alignment-jam-hackathons"
+              />
+              <Card
+                icon={Award}
+                title="AI Alignment Awards"
+                description="Tackle open problems in AI Safety and win prizes up to $100,000."
+                linkText="Learn More"
+                href="#ai-alignment-awards"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
   );
-}
+};
+
+export default Home;
