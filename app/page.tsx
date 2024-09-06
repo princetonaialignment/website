@@ -30,8 +30,9 @@ const Home: FC = () => {
             <p className="text-2xl mb-12 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
               A community working to reduce risks from advanced AI.
             </p>
-
-            <Button href="#mission">Learn More</Button>
+            {/* TODO: Add this back in after activities fair */}
+            {/* <Button href="#mission">Learn More</Button> */}
+            <Button href="#mission">Applications available 9/7 @ 12:00 AM</Button>
           </div>
         </section>
 
@@ -51,7 +52,8 @@ const Home: FC = () => {
                 with the incentives of the many actors developing this
                 technology.
               </Paragraph>
-              <Button href="#learn-more">Learn More</Button>
+              {/* TODO: Add this back in after activities fair */}
+              {/* <Button href="#learn-more">Learn More</Button> */}
 
               <SubsectionTitle>
                 We work to ensure AI is developed to benefit humanity&apos;s future
@@ -63,7 +65,8 @@ const Home: FC = () => {
                 failures. Our organization empowers students and researchers at
                 Princeton to contribute to the field of AI safety.
               </Paragraph>
-              <Button href="#mailing-list">Join Mailing List</Button>
+              {/* TODO: Add this back in after activities fair */}
+              {/* <Button href="#mailing-list">Join Mailing List</Button> */}
             </div>
           </div>
         </section>
@@ -78,7 +81,7 @@ const Home: FC = () => {
                   Hands-on workshops to learn about the engineering side of AI
                   safety.
                 </Paragraph>
-                <Button href="#view-notebooks">View Notebooks</Button>
+                <Button href="/">Coming soon!</Button>
               </div>
               <div className="bg-white p-8 rounded-lg shadow-xl">
                 <Image

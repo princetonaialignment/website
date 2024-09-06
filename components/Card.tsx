@@ -25,7 +25,8 @@ const Card: FC<CardProps> = ({
       href={href}
       className="text-[#ea580c] font-semibold hover:underline inline-flex items-center"
     >
-      {linkText} <ArrowRight className="ml-1 h-4 w-4" />
+      {/* TODO: Add this back in after activities fair */}
+      {/* {linkText} <ArrowRight className="ml-1 h-4 w-4" /> */}
     </Link>
   </article>
 );
