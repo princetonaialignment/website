@@ -1,5 +1,4 @@
 import { FC, ReactNode } from "react";
-import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
 import Paragraph from "@/components/Paragraph";
 import Footer from "@/components/Footer";
@@ -12,12 +11,12 @@ import {
   Edit,
 } from "lucide-react";
 
-interface ResourceCardProps {
+type ResourceCardProps = {
   icon: ReactNode;
   title: string;
   description: string;
   links: { text: string; url: string }[];
-}
+};
 
 const ResourceCard: FC<ResourceCardProps> = ({
   icon,
@@ -25,10 +24,10 @@ const ResourceCard: FC<ResourceCardProps> = ({
   description,
   links,
 }) => (
-  <div className="bg-white rounded-lg shadow-md p-6 flex flex-col h-full">
+  <div className="bg-white rounded-lg shadow-md p-6 flex flex-col h-full min-h-[400px]">
     <div className="flex items-center mb-4">
       <div className="text-[#F66813] mr-3">{icon}</div>
-      <h3 className="text-xl font-semibold">{title}</h3>
+      <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
     </div>
     <p className="text-gray-600 mb-4 flex-grow">{description}</p>
     <ul className="space-y-2">
@@ -40,8 +39,8 @@ const ResourceCard: FC<ResourceCardProps> = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <ArrowRight size={16} className="mr-2 flex-shrink-0" />
-            <span className="line-clamp-1">{link.text}</span>
+            <ArrowRight size={16} className="mr-1 flex-shrink-0" />
+            <span>{link.text}</span>
           </a>
         </li>
       ))}
@@ -153,7 +152,7 @@ const Community: FC = () => {
   const blogs = [
     {
       title: "AI Alignment Forum",
-      description: "A hub for technical research into beneficial AI.",
+      description: "A hub for technical research on beneficial AI.",
       url: "https://www.alignmentforum.org/",
     },
     {
@@ -205,36 +204,28 @@ const Community: FC = () => {
   ];
 
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="bg-[#F66813] text-gray-800">
       <main className="pt-16">
         {/* Hero Section */}
         <section className="bg-gradient-to-r bg-[#F66813] text-white py-20 px-4 relative overflow-hidden">
           <div className="container mx-auto text-center relative z-10">
-            <h1 className="text-5xl font-bold mb-6 animate-fade-in-up">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Community Resources
             </h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
-              Explore AI alignment research and connect with the community
+            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+              Connect with the AI alignment community.
             </p>
-          </div>
-          <div className="absolute inset-0 opacity-10">
-            <Image
-              src="/network-bg.svg"
-              alt="Network Background"
-              layout="fill"
-              objectFit="cover"
-            />
           </div>
         </section>
 
         {/* Resources Section */}
-        <section className="py-20 px-6">
+        <section className="py-20 px-6 bg-gray-50">
           <div className="container mx-auto max-w-6xl">
             <SectionTitle>AI Alignment Resources</SectionTitle>
             <Paragraph className="mb-12 text-center max-w-3xl mx-auto">
               Dive into the world of AI alignment with our curated list of
               resources. Whether you&apos;re new to the field or looking to
-              deepen your understanding, we&apos;ve got you covered!
+              deepen your understanding, we&apos;ve got you covered.
             </Paragraph>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {resources.map((resource, index) => (
@@ -248,7 +239,7 @@ const Community: FC = () => {
         <section className="py-20 px-6 bg-white">
           <div className="container mx-auto max-w-6xl">
             <SectionTitle>Blogs We Like</SectionTitle>
-            <Paragraph className="mb-12 text-center max-w-3xl mx-auto text-sm">
+            <Paragraph className="mb-12 text-center max-w-3xl mx-auto">
               Stay informed with these insightful blogs covering AI alignment
               and the latest developments in AI research.
             </Paragraph>
@@ -256,11 +247,13 @@ const Community: FC = () => {
               {blogs.map((blog, index) => (
                 <div
                   key={index}
-                  className="bg-gray-100 rounded-lg p-6 flex flex-col h-full"
+                  className="bg-gray-100 rounded-lg p-6 flex flex-col h-full min-h-[350px]"
                 >
                   <div className="flex items-center mb-4">
                     <Edit size={24} className="text-[#F66813] mr-3" />
-                    <h3 className="text-xl font-semibold">{blog.title}</h3>
+                    <h3 className="text-lg md:text-xl font-semibold">
+                      {blog.title}
+                    </h3>
                   </div>
                   <p className="text-gray-600 mb-4 flex-grow">
                     {blog.description}
@@ -271,7 +264,7 @@ const Community: FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <ArrowRight size={16} className="mr-2 flex-shrink-0" />
+                    <ArrowRight size={16} className="mr-1 flex-shrink-0" />
                     <span>Visit Blog</span>
                   </a>
                 </div>
@@ -283,7 +276,7 @@ const Community: FC = () => {
         {/* Community Engagement Section */}
         <section className="py-20 px-6 bg-gray-50">
           <div className="container mx-auto max-w-4xl text-center">
-            <SectionTitle>Get Involved</SectionTitle>
+            <SectionTitle>Join The Discussion</SectionTitle>
             <Paragraph className="mb-8">
               Join the AI safety community, participate in discussions, and
               collaborate on research.

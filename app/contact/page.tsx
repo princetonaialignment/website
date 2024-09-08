@@ -11,11 +11,11 @@ const Contact: FC = () => {
         {/* Hero Section */}
         <section className="bg-gradient-to-r bg-[#F66813] text-white py-20 px-4">
           <div className="container mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6 animate-fade-in-up">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
               Contact Us
             </h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
-              Get in touch with Princeton AI Alignment
+              Get in touch with PAIA.
             </p>
           </div>
         </section>
@@ -32,7 +32,7 @@ const Contact: FC = () => {
                     {" "}
                     {/* Set a minimum height */}
                     <Paragraph>
-                      Join our mailing list to stay updated on our latest
+                      Join our mailing list to stay updated on the latest
                       events, research, and opportunities in AI alignment and
                       safety.
                     </Paragraph>
@@ -42,7 +42,7 @@ const Contact: FC = () => {
                   {" "}
                   {/* Push button to bottom */}
                   <a
-                    href="https://airtable.com/appsSKn5Zey1xrPDZ/shrFfMcxubFU4iMuj"
+                    href="https://airtable.com/appsSKn5Zey1xrPDZ/pag6pa9t9HNSi9q5D/form"
                     className="inline-flex items-center justify-center bg-[#F66813] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#E55703] transition duration-300"
                   >
                     <Send size={20} className="mr-2" />

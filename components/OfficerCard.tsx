@@ -1,8 +1,9 @@
 import { FC } from "react";
 import Image from "next/image";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
+import GitHubIcon from "@/components/GitHub";
 
-interface OfficerProps {
+type OfficerProps = {
   name: string;
   role: string;
   bio: string;
@@ -10,7 +11,7 @@ interface OfficerProps {
   github?: string;
   linkedin?: string;
   email?: string;
-}
+};
 
 const OfficerCard: FC<OfficerProps> = ({
   name,
@@ -44,7 +45,7 @@ const OfficerCard: FC<OfficerProps> = ({
           rel="noopener noreferrer"
           className="text-gray-600 hover:text-gray-900"
         >
-          <Github size={24} />
+          <GitHubIcon size={24} />
         </a>
       )}
       {linkedin && (

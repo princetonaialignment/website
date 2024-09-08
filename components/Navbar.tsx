@@ -33,11 +33,9 @@ const Navbar: FC = () => {
 
   const navItems = [
     { name: "About", path: "/about" },
-    // TODO: Add this back in after activities fair
-    // { name: "Activities", path: "/activities" },
+    { name: "Programs", path: "/programs" },
     { name: "Community", path: "/community" },
-    // TODO: Add this back in after activities fair
-    // { name: "Papers", path: "/papers" },
+    { name: "Papers", path: "/papers" },
     { name: "Contact", path: "/contact" },
   ];
 

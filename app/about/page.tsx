@@ -8,10 +8,7 @@ const About: FC = () => {
   const officers = [
     {
       name: "Windsor Nguyen",
-      role: "Lead Organizer",
-      // bio: `Windsor '25 is a senior in the Computer Science Department. 
-      //       He enjoys thinking about mechanistic interpretability and 
-      //       AI engineering at scale.`,
+      role: "Advanced Reading Group, Lead Organizer",
       bio: `Windsor '25 is a senior in the Computer Science Department.`,
       imageUrl: "/officers/windsor.jpeg",
       github: "https://github.com/windsornguyen",
@@ -20,7 +17,7 @@ const About: FC = () => {
     },
     {
       name: "Nick Ritter",
-      role: "Co-Founder",
+      role: "Co-Founder, Organizer",
       bio: "Nick '22 GS'28 is a third-year PhD student in the Economics Department.",
       imageUrl: "/officers/nick.jpeg",
       linkedin: "https://www.linkedin.com/in/nicholas-ritter-888777142/",
@@ -28,7 +25,7 @@ const About: FC = () => {
     },
     {
       name: "Saurish Srivastava",
-      role: "Infrastructure",
+      role: "Infrastructure, Organizer",
       bio: "Saurish '27 is a sophomore in the Computer Science Department.",
       imageUrl: "/officers/saurish.jpeg",
       linkedin: "https://www.linkedin.com/in/saurishhh/",
@@ -37,7 +34,7 @@ const About: FC = () => {
     },
     {
       name: "Owen Yang",
-      role: "Treasurer",
+      role: "Treasurer, Organizer",
       bio: "Owen '26 is a junior in the Mathematics Department.",
       imageUrl: "/officers/owen.jpeg",
       linkedin: "https://www.linkedin.com/in/tigershark22/",
@@ -46,41 +43,37 @@ const About: FC = () => {
     },
     {
       name: "James Zhang",
-      role: "Seminar Lead",
+      role: "Intro Seminar Facilitator, Organizer",
       bio: "James '25 is a senior in the Computer Science Department.",
       imageUrl: "/officers/james.png",
-      // github: "https://github.com/jameszhang",
+      github: "https://github.com/jzhang512",
       linkedin: "https://www.linkedin.com/in/jzhang512/",
       email: "james@princetonalignment.org",
     },
   ];
 
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="bg-[#F66813] text-gray-800">
       <main className="pt-16">
         {/* Hero Section */}
         <section className="bg-gradient-to-r bg-[#F66813] text-white py-20 px-4">
           <div className="container mx-auto text-center">
-            <h1 className="text-5xl font-bold mb-6 animate-fade-in-up">
-              About Us
-            </h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
-              Meet the dedicated team behind Princeton AI Alignment
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">About Us</h1>
+            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+              The dedicated team behind PAIA.
             </p>
           </div>
         </section>
 
         {/* Team Section with Pentagon Layout */}
-        <section className="py-28 px-6 bg-white">
+        <section className="py-20 md:py-28 px-6 bg-gray-100">
           <div className="container mx-auto max-w-6xl">
             <SectionTitle>Meet Our Team</SectionTitle>
-            <div className="mb-12">
+            <div className="mb-12 text-center">
               <Paragraph>
-                Our officers bring diverse backgrounds and expertise to the
-                challenge of ensuring AI benefits humanity. Together, we work to
-                foster a community of students and researchers committed to
-                addressing the critical issues surrounding AI alignment and
-                safety.
+                We aim to foster a vibrant community for students and
+                researchers committed to addressing the critical issues
+                surrounding AI safety and alignment.
               </Paragraph>
             </div>
             <div className="relative">
@@ -109,7 +102,7 @@ const About: FC = () => {
         </section>
 
         {/* Mission Reminder Section */}
-        <section className="py-28 px-6 bg-gray-100">
+        <section className="py-20 md:py-28 px-6 bg-white">
           <div className="container mx-auto max-w-4xl text-center">
             <SectionTitle>Join Our Mission</SectionTitle>
             <div className="mb-8">
@@ -117,11 +110,13 @@ const About: FC = () => {
                 We&apos;re always looking for passionate individuals to join our
                 cause. Whether you&apos;re a student, researcher, or community
                 member, there are many ways to get involved and contribute to
-                the important work of AI alignment.
+                the important work of AI alignment. If you are interested in 
+                helping to organize future iterations of PAIA, or you just want to 
+                schedule a coffee chat, please contact us below.
               </Paragraph>
             </div>
             <a
-              href="https://airtable.com/appsSKn5Zey1xrPDZ/shrFfMcxubFU4iMuj"
+              href="https://airtable.com/appsSKn5Zey1xrPDZ/pag6pa9t9HNSi9q5D/form"
               className="bg-[#F66813] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#E55703] transition duration-300"
             >
               Get Involved

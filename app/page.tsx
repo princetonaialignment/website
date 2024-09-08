@@ -1,19 +1,44 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useEffect } from "react";
 import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
-import SubsectionTitle from "@/components/SubsectionTitle";
 import Paragraph from "@/components/Paragraph";
-import Button from "@/components/Button";
+import { Button, ApplyButton } from "@/components/Button";
 import Card from "@/components/Card";
 import Footer from "@/components/Footer";
+import Alumni from "@/components/AlumniSection";
 import { Book, Briefcase, Users, Award, Code } from "lucide-react";
+import Countdown from "@/components/Countdown";
+import useApplicationStore from "@/app/stores/useApplicationStore";
 
 const Home: FC = () => {
+  const { applicationsOpen, setApplicationsOpen } = useApplicationStore();
+
+  const deadline = "September 14, 2024 23:59:00";
+
+  // Check if the deadline has passed when the component mounts
+  useEffect(() => {
+    const checkIfDeadlinePassed = () => {
+      const now = new Date().getTime();
+      const deadlineTime = new Date(deadline).getTime();
+      if (now > deadlineTime) {
+        setApplicationsOpen(false); // Update Zustand store to close applications
+      }
+    };
+
+    checkIfDeadlinePassed(); // Perform the check on mount
+  }, [deadline, setApplicationsOpen]);
+
+  const handleExpire = () => {
+    setApplicationsOpen(false); // Close applications when countdown expires
+  };
+
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="bg-[#F66813] text-gray-800">
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r bg-[#F66813] text-white py-32 px-4 overflow-hidden">
+        <section className="relative bg-gradient-to-r from-[#F66813] to-[#F76C2B] text-white py-32 px-4 overflow-hidden">
           <div className="absolute inset-0 opacity-5">
             <Image
               src="/cover.png"
@@ -21,6 +46,7 @@ const Home: FC = () => {
               fill
               priority
               className="object-cover z-0"
+              draggable="false"
             />
           </div>
           <div className="container mx-auto text-center relative z-10">
@@ -30,9 +56,19 @@ const Home: FC = () => {
             <p className="text-2xl mb-12 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
               A community working to reduce risks from advanced AI.
             </p>
-            {/* TODO: Add this back in after activities fair */}
-            {/* <Button href="#mission">Learn More</Button> */}
-            <Button href="#mission">Applications available 9/7 @ 12:00 AM</Button>
+            {applicationsOpen && (
+              <div className="flex justify-center space-x-4 mt-6">
+                <ApplyButton href="https://airtable.com/appsSKn5Zey1xrPDZ/pagPbdsS40O7CLBN3/form">
+                  Apply to Intro to AI Alignment Seminar
+                </ApplyButton>
+                <ApplyButton href="https://airtable.com/appsSKn5Zey1xrPDZ/paglkIIzLl5122Uen/form">
+                  Apply to Advanced Reading Group
+                </ApplyButton>
+              </div>
+            )}
+            <div className="text-xl mt-8">
+              <Countdown deadline={deadline} onExpire={handleExpire} />
+            </div>
           </div>
         </section>
 
@@ -42,7 +78,7 @@ const Home: FC = () => {
             <SectionTitle>Our Mission</SectionTitle>
             <div className="space-y-8">
               <Paragraph>
-                AI may soon radically transform our society, for better or
+                AI will soon radically transform our society, for better or
                 worse. Experts broadly expect significant progress in AI during
                 our lifetimes, potentially to the point of achieving human-level
                 intelligence. Digital systems with such capabilities would
@@ -52,21 +88,23 @@ const Home: FC = () => {
                 with the incentives of the many actors developing this
                 technology.
               </Paragraph>
-              {/* TODO: Add this back in after activities fair */}
-              {/* <Button href="#learn-more">Learn More</Button> */}
+              <div className="flex items-center justify-center py-4">
+                <div className="w-full border-t border-gray-300"></div>
+                <div className="w-full border-t border-gray-300"></div>
+              </div>
 
-              <SubsectionTitle>
-                We work to ensure AI is developed to benefit humanity&apos;s future
-              </SubsectionTitle>
+              <SectionTitle>
+                We work to ensure AI is developed to benefit humanity&apos;s
+                future
+              </SectionTitle>
               <Paragraph>
                 Absent a dedicated safety effort, AI systems will outpace our
-                ability to explain their behavior, instill our values in their
-                objectives, and to build robust safeguards against their
-                failures. Our organization empowers students and researchers at
-                Princeton to contribute to the field of AI safety.
+                ability to explain their behavior, instill our values into their
+                objectives, and build robust safeguards against their failures.
+                Our organization empowers students and researchers at Princeton
+                University to contribute to the field of AI safety and
+                alignment.
               </Paragraph>
-              {/* TODO: Add this back in after activities fair */}
-              {/* <Button href="#mailing-list">Join Mailing List</Button> */}
             </div>
           </div>
         </section>
@@ -81,7 +119,12 @@ const Home: FC = () => {
                   Hands-on workshops to learn about the engineering side of AI
                   safety.
                 </Paragraph>
-                <Button href="/">Coming soon!</Button>
+                <Button
+                  href="https://github.com/princetonaialignment/workshops/"
+                  showArrow={true}
+                >
+                  Coming soon!
+                </Button>
               </div>
               <div className="bg-white p-8 rounded-lg shadow-xl">
                 <Image
@@ -96,52 +139,54 @@ const Home: FC = () => {
           </div>
         </section>
 
+        <Alumni />
+
         {/* Get Involved Section */}
-        <section id="get-involved" className="py-28 px-6 bg-white">
+        <section id="get-involved" className="py-28 px-6 bg-gray-100">
           <div className="container mx-auto">
             <SectionTitle>Get Involved</SectionTitle>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card
                 icon={Book}
                 title="Introductory Seminars"
-                description="Join our 8-week reading and discussion groups diving into AI alignment and governance."
+                description="Join our 8-week seminar program to learn the fundamentals of AI alignment and governance."
                 linkText="Apply Now"
-                href="#introductory-seminars"
+                href="/programs"
               />
               <Card
                 icon={Users}
                 title="Advanced Reading Group"
-                description="Deepen your understanding of AI alignment and related research in our advanced group."
-                linkText="Learn More"
-                href="#advanced-reading-group"
+                description="Read state-of-the-art alignment research papers in our advanced reading group."
+                linkText="Apply Now"
+                href="/programs"
               />
               <Card
                 icon={Code}
                 title="Research Opportunities"
                 description="Contribute to AI alignment research with guidance from experienced mentors."
                 linkText="Contact Us"
-                href="#contact-us"
+                href="/contact"
               />
               <Card
                 icon={Briefcase}
                 title="Jobs in AI Safety"
                 description="Explore career opportunities in AI Safety at leading organizations."
                 linkText="View Positions"
-                href="#ai-safety-positions"
+                href="https://jobs.80000hours.org/?refinementList%5Btags_area%5D%5B0%5D=AI%20safety%20%26%20policy"
               />
               <Card
                 icon={Award}
                 title="Contests and Hackathons"
-                description="Participate in worldwide AI safety competitions and collaborative research events."
-                linkText="Join Events"
-                href="#alignment-jam-hackathons"
+                description="Participate in worldwide AI safety and security competitions and collaborative research events."
+                linkText="See Events"
+                href="https://www.apartresearch.com/"
               />
               <Card
                 icon={Award}
                 title="AI Alignment Awards"
-                description="Tackle open problems in AI Safety and win prizes up to $100,000."
+                description="Tackle open problems in AI safety and win prizes up to $50,000."
                 linkText="Learn More"
-                href="#ai-alignment-awards"
+                href="https://www.mlsafety.org/safebench"
               />
             </div>
           </div>
