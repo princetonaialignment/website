@@ -22,13 +22,20 @@ const NavItem: FC<NavItemProps> = ({ href, children }) => (
 const Navbar: FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false); // Prevent rehydration issues
   const fullText = "Princeton AI Alignment";
   const shortText = "PAIA";
 
+  // Effect to detect scrolling
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Ensure animations are only applied after the component is fully mounted
+  useEffect(() => {
+    setIsMounted(true);
   }, []);
 
   const navItems = [
@@ -41,7 +48,7 @@ const Navbar: FC = () => {
 
   return (
     <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-50 ease-in-out ${
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ease-in-out ${
         scrolled ? "bg-[#c2410c]" : "bg-[#F66813]"
       }`}
       aria-label="Main Navigation"
@@ -54,29 +61,39 @@ const Navbar: FC = () => {
               href="/"
               className="text-white transition-colors duration-150"
             >
-              <AnimatePresence mode="wait">
-                {!scrolled ? (
-                  <motion.span
-                    key="full"
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -5 }}
-                    className="font-bold text-sm sm:text-base lg:text-lg transition-all duration-300 ease-in-out"
-                  >
-                    {fullText}
-                  </motion.span>
-                ) : (
-                  <motion.span
-                    key="short"
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -5 }}
-                    className="font-bold text-sm sm:text-base lg:text-lg transition-all duration-300 ease-in-out"
-                  >
-                    {shortText}
-                  </motion.span>
-                )}
-              </AnimatePresence>
+              {isMounted && (
+                <AnimatePresence mode="wait">
+                  {!scrolled ? (
+                    <motion.span
+                      key="full"
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -5 }}
+                      transition={{
+                        duration: 0.5,
+                        ease: "easeInOut",
+                      }}
+                      className="font-bold text-sm sm:text-base lg:text-lg transition-all duration-300 ease-in-out"
+                    >
+                      {fullText}
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      key="short"
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -5 }}
+                      transition={{
+                        duration: 0.5,
+                        ease: "easeInOut",
+                      }}
+                      className="font-bold text-sm sm:text-base lg:text-lg transition-all duration-300 ease-in-out"
+                    >
+                      {shortText}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              )}
             </Link>
           </div>
 
@@ -109,6 +126,7 @@ const Navbar: FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="md:hidden bg-[#c2410c]"
           >
             <div className="px-4 pt-4 pb-6 space-y-2">

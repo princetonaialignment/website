@@ -10,6 +10,7 @@ const lusitana = Lusitana({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   // title: "Home \\ PAIA", TODO: Make this custom for each page
+  title: "PAIA",
   description: "Working towards a safe future in AI.",
 };
 
