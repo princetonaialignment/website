@@ -15,7 +15,7 @@ const Programs: FC = () => {
   const programs = [
     {
       title: "Intro to AI Alignment Seminar",
-      description: `An overview of AI alignment, the field that aims to align advanced AI systems with human values and intentions. We cover the fundamentals such as interpreting the internals of neural networks, reinforcement learning from human feedback, and concrete ways that transformative AI might go really badly. Prior machine learning experience is not necessary!`,
+      description: `An overview of AI alignment, the field that aims to align advanced AI systems with human values and intentions. We cover the fundamentals such as interpreting the internals of neural networks, reinforcement learning from human feedback, and concrete ways that transformative AI might go really badly. Prior machine learning experience is not necessary! See our curriculum <a href="https://docs.google.com/document/d/1BDu8MiLbjQ-QBu-OsvQBQFVzCCnjVC8wnwmw3vklYfQ/pub" class="text-[#F66813] hover:underline">here</a>.`,
       prerequisites: "None",
       duration: "8 weeks, ~2hr/wk",
       icon: <BookOpen size={36} className="text-[#F66813]" />,
@@ -72,7 +72,8 @@ const Programs: FC = () => {
                       {program.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 mb-6">{program.description}</p>
+                  {/* TODO: Probably a more sustainable way to do this instead of dangerouslySetInnerHTML? */}
+                  <div className="text-gray-600 mb-6" dangerouslySetInnerHTML={{ __html: program.description }}></div>
                   <div className="border-t border-gray-200 pt-4 mt-auto">
                     <p className="text-sm text-gray-600">
                       <strong className="text-[#F66813]">
