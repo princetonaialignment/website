@@ -15,7 +15,7 @@ import useApplicationStore from "@/app/stores/useApplicationStore";
 const Home: FC = () => {
   const { applicationsOpen, setApplicationsOpen } = useApplicationStore();
 
-  const deadline = "October 14, 2025 23:59:00";
+  const deadline = "September 14, 2025 23:59:00";
 
   // Check if the deadline has passed when the component mounts
   useEffect(() => {
@@ -58,11 +58,8 @@ const Home: FC = () => {
             </p>
             {applicationsOpen && (
               <div className="flex justify-center space-x-4 mt-6">
-                <ApplyButton href="https://airtable.com/appsSKn5Zey1xrPDZ/pagPbdsS40O7CLBN3/form">
-                  Apply to Intro to AI Alignment Seminar
-                </ApplyButton>
-                <ApplyButton href="https://airtable.com/appsSKn5Zey1xrPDZ/paglkIIzLl5122Uen/form">
-                  Apply to Advanced Reading Group
+                <ApplyButton href="https://docs.google.com/forms/d/e/1FAIpQLSfah5RTTUt5cNT9367MHdqgZMLIdOGWn0ULzEn4unAzSw9aoQ/viewform">
+                  Apply to Our Seminars
                 </ApplyButton>
               </div>
             )}

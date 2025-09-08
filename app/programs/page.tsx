@@ -102,7 +102,7 @@ const Programs: FC = () => {
               </Paragraph>
               <div className="flex justify-center space-x-4 mt-6">
                 <ApplyButton href="https://docs.google.com/forms/d/e/1FAIpQLSfah5RTTUt5cNT9367MHdqgZMLIdOGWn0ULzEn4unAzSw9aoQ/viewform">
-                  Apply to our Seminars Here
+                  Apply to our Seminars
                 </ApplyButton>
               </div>
             </div>
