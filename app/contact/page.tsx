@@ -42,7 +42,7 @@ const Contact: FC = () => {
                   {" "}
                   {/* Push button to bottom */}
                   <a
-                    href="https://airtable.com/appsSKn5Zey1xrPDZ/pag6pa9t9HNSi9q5D/form"
+                    href="https://forms.gle/ocD73Ron7rUBTjCr6"
                     className="inline-flex items-center justify-center bg-[#F66813] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#E55703] transition duration-300"
                   >
                     <Send size={20} className="mr-2" />
@@ -71,7 +71,7 @@ const Contact: FC = () => {
                   {" "}
                   {/* Push button to bottom */}
                   <a
-                    href="mailto:windsor@princetonalignment.org"
+                    href="mailto:paia@princeton.edu"
                     className="inline-flex items-center justify-center bg-[#F66813] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#E55703] transition duration-300"
                   >
                     <Mail size={20} className="mr-2" />

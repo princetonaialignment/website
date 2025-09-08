@@ -15,7 +15,7 @@ import useApplicationStore from "@/app/stores/useApplicationStore";
 const Home: FC = () => {
   const { applicationsOpen, setApplicationsOpen } = useApplicationStore();
 
-  const deadline = "September 14, 2024 23:59:00";
+  const deadline = "October 14, 2025 23:59:00";
 
   // Check if the deadline has passed when the component mounts
   useEffect(() => {

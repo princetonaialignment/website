@@ -101,11 +101,8 @@ const Programs: FC = () => {
                 researcher, we have a place for you in our community.
               </Paragraph>
               <div className="flex justify-center space-x-4 mt-6">
-                <ApplyButton href="https://airtable.com/appsSKn5Zey1xrPDZ/pagPbdsS40O7CLBN3/form">
-                  Apply to Intro to AI Alignment Seminar
-                </ApplyButton>
-                <ApplyButton href="https://airtable.com/appsSKn5Zey1xrPDZ/paglkIIzLl5122Uen/form">
-                  Apply to Advanced Reading Group
+                <ApplyButton href="https://docs.google.com/forms/d/e/1FAIpQLSfah5RTTUt5cNT9367MHdqgZMLIdOGWn0ULzEn4unAzSw9aoQ/viewform">
+                  Apply to our Seminars Here
                 </ApplyButton>
               </div>
             </div>

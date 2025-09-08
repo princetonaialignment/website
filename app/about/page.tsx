@@ -7,48 +7,60 @@ import OfficerCard from "@/components/OfficerCard";
 const About: FC = () => {
   const officers = [
     {
-      name: "Windsor Nguyen",
-      role: "Advanced Reading Group, Lead Organizer",
-      bio: `Windsor '25 is a senior in the Computer Science Department.`,
-      imageUrl: "/officers/windsor.jpeg",
-      github: "https://github.com/windsornguyen",
-      linkedin: "https://linkedin.com/in/windsornguyen",
-      email: "windsor@princetonalignment.org",
-    },
-    {
-      name: "Nick Ritter",
-      role: "Co-Founder, Organizer",
-      bio: "Nick '22 GS'28 is a third-year PhD student in the Economics Department.",
-      imageUrl: "/officers/nick.jpeg",
-      linkedin: "https://www.linkedin.com/in/nicholas-ritter-888777142/",
-      email: "nick@princetonalignment.org",
-    },
-    {
-      name: "Saurish Srivastava",
-      role: "Infrastructure, Organizer",
-      bio: "Saurish '27 is a sophomore in the Computer Science Department.",
-      imageUrl: "/officers/saurish.jpeg",
-      linkedin: "https://www.linkedin.com/in/saurishhh/",
-      github: "https://github.com/minor",
-      email: "saurish@princetonalignment.org",
-    },
-    {
       name: "Owen Yang",
-      role: "Treasurer, Organizer",
-      bio: "Owen '26 is a junior in the Mathematics Department.",
+      role: "President",
+      bio: "Owen '26 is a senior in the Mathematics Department.",
       imageUrl: "/officers/owen.jpeg",
       linkedin: "https://www.linkedin.com/in/tigershark22/",
-      github: "https://github.com/tigeyshark22",
-      email: "owen@princetonalignment.org",
+      email: "oy3975@princeton.edu",
     },
     {
-      name: "James Zhang",
-      role: "Intro Seminar Facilitator, Organizer",
-      bio: "James '25 is a senior in the Computer Science Department.",
-      imageUrl: "/officers/james.png",
-      github: "https://github.com/jzhang512",
-      linkedin: "https://www.linkedin.com/in/jzhang512/",
-      email: "james@princetonalignment.org",
+      name: "Brandon Cho",
+      role: "Treasurer",
+      bio: "Brandon '26 is a senior in the Mathematics Department.",
+      imageUrl: "/officers/brandon.png",
+      linkedin: "https://www.linkedin.com/in/brandon-y-cho/",
+      email: "brandon.cho@princeton.edu",
+    },
+    {
+      name: "Jack Thompson",
+      role: "Lead Organizer, Intro/Governance Reading Group Facilitator",
+      bio: `Jack '27 is a junior in the Computer Science Department.`,
+      imageUrl: "/officers/jack.jpg",
+      linkedin: "",
+      email: "jackthompson@princeton.edu",
+    },
+    {
+      name: "Kia Ghods",
+      role: "Organizer, Intro/Advanced Reading Group Facilitator",
+      bio: `Kia '27 is a junior in the Computer Science Department.`,
+      imageUrl: "/officers/kia.png",
+      linkedin: "https://linkedin.com/in/kia-ghods",
+      email: "kia.ghods@princeton.edu",
+    },
+    {
+      name: "Keith Matanachai",
+      role: "Organizer, Intro Reading Group Facilitator",
+      bio: `Keith '26 is a senior in the Computer Science Department.`,
+      imageUrl: "/officers/keith.png",
+      linkedin: "https://www.linkedin.com/in/keith-matanachai/",
+      email: "km4074@princeton.edu",
+    },
+    {
+      name: "Elle Lazarski",
+      role: "Organizer, Intro Reading Group Facilitator",
+      bio: `Elle '26 is a senior in the Electrical & Computer Engineering Department.`,
+      imageUrl: "/officers/elle.png",
+      linkedin: "https://www.linkedin.com/in/elle-lazarski/",
+      email: "elle.lazarski@princeton.edu",
+    },
+    {
+      name: "Jishnu Roychoudhury",
+      role: "Organizer, Intro/Advanced Reading Group Facilitator",
+      bio: `Jishnu '27 is a junior in the Computer Science Department.`,
+      imageUrl: "/officers/Jishnu.png",
+      linkedin: "https://www.linkedin.com/in/jishnu-roychoudhury/",
+      email: "jishnu.roy@princeton.edu",
     },
   ];
 
@@ -76,27 +88,10 @@ const About: FC = () => {
                 surrounding AI safety and alignment.
               </Paragraph>
             </div>
-            <div className="relative">
-              {/* Top row */}
-              <div className="flex justify-between mb-16">
-                {officers.slice(0, 3).map((officer) => (
-                  <div key={officer.name} className="w-1/3 mx-2">
-                    <OfficerCard {...officer} />
-                  </div>
-                ))}
-              </div>
-
-              {/* Bottom row */}
-              <div className="flex justify-center">
-                {officers.slice(3, 5).map((officer) => (
-                  <div
-                    key={officer.name}
-                    className="w-1/3 mx-2 transform -translate-y-8"
-                  >
-                    <OfficerCard {...officer} />
-                  </div>
-                ))}
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {officers.map((officer) => (
+                <OfficerCard key={officer.name} {...officer} />
+              ))}
             </div>
           </div>
         </section>
@@ -116,7 +111,7 @@ const About: FC = () => {
               </Paragraph>
             </div>
             <a
-              href="https://airtable.com/appsSKn5Zey1xrPDZ/pag6pa9t9HNSi9q5D/form"
+              href="https://forms.gle/ocD73Ron7rUBTjCr6"
               className="bg-[#F66813] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#E55703] transition duration-300"
             >
               Get Involved
