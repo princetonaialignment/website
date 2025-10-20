@@ -62,6 +62,14 @@ const About: FC = () => {
       linkedin: "https://www.linkedin.com/in/jishnu-roychoudhury/",
       email: "jishnu.roy@princeton.edu",
     },
+    {
+      name: "Maggie Wang",
+      role: "Organizer, Intro/Advanced Reading Group Facilitator",
+      bio: `Maggie '26 is a senior in the Computer Science Department.`,
+      imageUrl: "/officers/maggie.jpg",
+      linkedin: "https://www.linkedin.com/in/maggiewang0785/",
+      email: "mw0785@princeton.edu",
+    },
   ];
 
   return (
