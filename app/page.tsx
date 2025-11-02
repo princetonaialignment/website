@@ -56,13 +56,20 @@ const Home: FC = () => {
             <p className="text-2xl mb-12 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
               A community working to reduce risks from advanced AI.
             </p>
-            {applicationsOpen && (
-              <div className="flex justify-center space-x-4 mt-6">
-                <ApplyButton href="https://docs.google.com/forms/d/e/1FAIpQLSfah5RTTUt5cNT9367MHdqgZMLIdOGWn0ULzEn4unAzSw9aoQ/viewform">
-                  Apply to Our Seminars
+            <div className="flex flex-col items-center space-y-4 mt-6">
+              {applicationsOpen && (
+                <div className="flex justify-center space-x-4">
+                  <ApplyButton href="https://docs.google.com/forms/d/e/1FAIpQLSfah5RTTUt5cNT9367MHdqgZMLIdOGWn0ULzEn4unAzSw9aoQ/viewform">
+                    Apply to Our Seminars
+                  </ApplyButton>
+                </div>
+              )}
+              <div className="flex justify-center">
+                <ApplyButton href="https://docs.google.com/forms/d/e/1FAIpQLSddI4Nysw-NuNbVC4UetcfqdR_2d6BUIFemrNsM7hjgcnfOkQ/viewform?usp=sharing&ouid=110961928977131798504">
+                  Join our Discord and Listserv
                 </ApplyButton>
               </div>
-            )}
+            </div>
             <div className="text-xl mt-8">
               <Countdown deadline={deadline} onExpire={handleExpire} />
             </div>
