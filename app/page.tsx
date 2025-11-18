@@ -66,7 +66,7 @@ const Home: FC = () => {
               )}
               <div className="flex justify-center">
                 <ApplyButton href="https://docs.google.com/forms/d/e/1FAIpQLSddI4Nysw-NuNbVC4UetcfqdR_2d6BUIFemrNsM7hjgcnfOkQ/viewform?usp=sharing&ouid=110961928977131798504">
-                  Join our Discord and Listserv
+                  Join our Discord and Listserv (open with Princeton email)
                 </ApplyButton>
               </div>
             </div>
