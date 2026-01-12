@@ -8,7 +8,7 @@ const About: FC = () => {
   const officers = [
     {
       name: "Owen Yang",
-      role: "President, Advanced Technical Reading Group Lead",
+      role: "President, Advanced Technical Fellowship Lead",
       bio: "Owen '26 is a senior in the Mathematics Department.",
       imageUrl: "/officers/owen.jpeg",
       linkedin: "https://www.linkedin.com/in/tigershark22/",
@@ -32,7 +32,7 @@ const About: FC = () => {
     },
     {
       name: "Kia Ghods",
-      role: "Organizer, Intro/Advanced Reading Group Facilitator",
+      role: "Organizer, Intro/Advanced Fellowship Facilitator",
       bio: `Kia '27 is a junior in the Computer Science Department.`,
       imageUrl: "/officers/kia.png",
       linkedin: "https://linkedin.com/in/kia-ghods",
@@ -40,7 +40,7 @@ const About: FC = () => {
     },
     {
       name: "Keith Matanachai",
-      role: "Organizer, Intro Reading Group Facilitator",
+      role: "Organizer, Intro Fellowship Facilitator",
       bio: `Keith '26 is a senior in the Computer Science Department.`,
       imageUrl: "/officers/keith.png",
       linkedin: "https://www.linkedin.com/in/keith-matanachai/",
@@ -56,7 +56,7 @@ const About: FC = () => {
     },
     {
       name: "Jishnu Roychoudhury",
-      role: "Organizer, Intro/Advanced Reading Group Facilitator",
+      role: "Organizer, Intro/Advanced Fellowship Facilitator",
       bio: `Jishnu '27 is a junior in the Computer Science Department.`,
       imageUrl: "/officers/Jishnu.png",
       linkedin: "https://www.linkedin.com/in/jishnu-roychoudhury/",
@@ -64,7 +64,7 @@ const About: FC = () => {
     },
     {
       name: "Maggie Wang",
-      role: "Organizer, Intro/Advanced Reading Group Facilitator",
+      role: "Organizer, Intro/Advanced Fellowship Facilitator",
       bio: `Maggie '26 is a senior in the Computer Science Department.`,
       imageUrl: "/officers/maggie.jpg",
       linkedin: "https://www.linkedin.com/in/maggiewang0785/",
@@ -106,8 +106,75 @@ const About: FC = () => {
           </div>
         </section>
 
-        {/* Mission Reminder Section */}
+        {/* Our Network Section */}
         <section className="py-20 md:py-28 px-6 bg-white">
+          <div className="container mx-auto max-w-6xl">
+            <SectionTitle>Our Network</SectionTitle>
+            <div className="mb-12 text-center">
+              <Paragraph>
+                Our alumni have gone on to contribute to leading organizations in
+                AI research, policy, and technology.
+              </Paragraph>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <a
+                href="https://www.eleuther.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 text-center"
+              >
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  EleutherAI
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Open-source AI research organization
+                </p>
+              </a>
+              <a
+                href="https://www.dedaluslabs.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 text-center"
+              >
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Dedalus Labs
+                </h3>
+                <p className="text-sm text-gray-600">
+                  AI agent development platform
+                </p>
+              </a>
+              <a
+                href="https://www.schwarzmanscholars.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 text-center"
+              >
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Schwarzman Scholars
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Global leadership program
+                </p>
+              </a>
+              <a
+                href="https://ifp.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 text-center"
+              >
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Institute for Progress
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Science and technology think tank
+                </p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission Reminder Section */}
+        <section className="py-20 md:py-28 px-6 bg-gray-100">
           <div className="container mx-auto max-w-4xl text-center">
             <SectionTitle>Join Our Mission</SectionTitle>
             <div className="mb-8">

@@ -57,6 +57,46 @@ const foundationPapers: Paper[] = [
   },
 ];
 
+const ourPapers: Paper[] = [
+  {
+    title: "CCS-Lib: A Python package to elicit latent knowledge from LLMs",
+    authors: "Laurito et al.",
+    year: 2025,
+    url: "https://joss.theoj.org/papers/10.21105/joss.06511",
+    description: `A Python package for implementing Contrast-Consistent Search (CCS) to extract truthful beliefs from language models, addressing the challenge of eliciting latent knowledge.`,
+  },
+  {
+    title:
+      "Prompt-Character Divergence: A Responsibility Compass for Human-AI Creative Collaboration",
+    authors: "Maggie Wang, Wouter Haverals",
+    year: 2025,
+    url: "https://openreview.net/forum?id=szkyt49bN5",
+    description: `A lightweight metric that quantifies semantic drift in AI-generated images, helping creators determine when outputs reflect their intent versus model-driven biases. Published at NeurIPS Creative AI Track 2025.`,
+  },
+  {
+    title:
+      "Dynamic Risk Assessment for Offensive Cybersecurity Agents",
+    authors: "Wei et al.",
+    year: 2025,
+    url: "https://arxiv.org/abs/2505.18384",
+    description: `A framework for dynamically assessing and managing risks in offensive cybersecurity agents, ensuring safe deployment of AI systems in security-critical contexts. Published at NeurIPS 2025 Datasets & Benchmarks Track.`,
+  },
+  {
+    title: "Large Language Models Develop Novel Social Biases Through Adaptive Exploration",
+    authors: "Wu et al.",
+    year: 2025,
+    url: "https://arxiv.org/abs/2511.06148",
+    description: `Demonstrates that LLMs can spontaneously develop novel social biases about artificial demographic groups even when no inherent differences exist, resulting in highly stratified task allocations. These biases stem from exploration-exploitation trade-offs and are exacerbated by newer, larger models. Published at NeurIPS 2025 Workshop on Multi-Turn Interactions in Large Language Models (MTI-LLM).`,
+  },
+  {
+    title: "Demo: Statistically Significant Results on Biases and Errors of LLMs Do Not Guarantee Generalizable Results",
+    authors: "Liu et al.",
+    year: 2025,
+    url: "https://openreview.net/forum?id=9WjoHI44Gf",
+    description: `Develops an infrastructure to probe medical chatbots using automatically generated queries across patient demographics, histories, and disorders. Finds that LLM annotators exhibit low agreement scores, and only specific LLM pairs yield statistically significant differences. Recommends using multiple LLM evaluators and publishing inter-LLM agreement metrics. Published at NeurIPS 2025 Workshop on GenAI for Health Potential, Trust, and Policy Compliance.`,
+  },
+];
+
 const technicalPapers: Paper[] = [
   {
     title:
@@ -136,8 +176,25 @@ const Papers: FC = () => {
           </div>
         </section>
 
-        {/* Safety Papers Section */}
+        {/* Our Papers Section */}
         <section className="py-20 md:py-28 px-6 bg-white">
+          <div className="container mx-auto max-w-6xl">
+            <SectionTitle>Papers We&apos;ve Written</SectionTitle>
+            <div className="mb-12 text-center">
+              <Paragraph>
+                Research contributions from PAIA members advancing the field of AI safety and alignment.
+              </Paragraph>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {ourPapers.map((paper, index) => (
+                <PaperCard key={index} {...paper} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Safety Papers Section */}
+        <section className="py-20 md:py-28 px-6 bg-gray-100">
           <div className="container mx-auto max-w-6xl">
             <SectionTitle>Foundation</SectionTitle>
             <div className="mb-12 text-center">
@@ -154,7 +211,7 @@ const Papers: FC = () => {
         </section>
 
         {/* Technical Papers Section */}
-        <section className="py-20 md:py-28 px-6 bg-gray-100">
+        <section className="py-20 md:py-28 px-6 bg-white">
           <div className="container mx-auto max-w-6xl">
             <SectionTitle>Technical</SectionTitle>
             <div className="mb-12 text-center">

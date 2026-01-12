@@ -82,15 +82,7 @@ const Home: FC = () => {
             <SectionTitle>Our Mission</SectionTitle>
             <div className="space-y-8">
               <Paragraph>
-                AI will soon radically transform our society, for better or
-                worse. Experts broadly expect significant progress in AI during
-                our lifetimes, potentially to the point of achieving human-level
-                intelligence. Digital systems with such capabilities would
-                revolutionize every aspect of our society, from business, to
-                politics, to culture. Worryingly, these machines will not be
-                beneficial by default, and public interest is often in tension
-                with the incentives of the many actors developing this
-                technology.
+              AI is advancing rapidly and will reshape society—science, education, markets, and national security. But unlike most technologies, advanced AI is highly general and scalable: small failures can compound as systems become more capable and more autonomous. The core challenge is alignment: making AI systems reliable, interpretable, and robustly guided by human values and intent, even under pressure and in unfamiliar situations.
               </Paragraph>
               <div className="flex items-center justify-center py-4">
                 <div className="w-full border-t border-gray-300"></div>
@@ -98,16 +90,10 @@ const Home: FC = () => {
               </div>
 
               <SectionTitle>
-                We work to ensure AI is developed to benefit humanity&apos;s
-                future
+              We work to ensure AI is developed to benefit humanity’s future
               </SectionTitle>
               <Paragraph>
-                Absent a dedicated safety effort, AI systems will outpace our
-                ability to explain their behavior, instill our values into their
-                objectives, and build robust safeguards against their failures.
-                Our organization empowers students and researchers at Princeton
-                University to contribute to the field of AI safety and
-                alignment.
+              Princeton AI Alignment is building a campus community for this work. We support Princeton students and researchers through fellowships, speaker events, project teams, and mentorship—helping members learn the field, contribute to research, and engage seriously with the technical and societal stakes of advanced AI.
               </Paragraph>
             </div>
           </div>
@@ -159,8 +145,8 @@ const Home: FC = () => {
               />
               <Card
                 icon={Users}
-                title="Advanced Reading Group"
-                description="Read state-of-the-art alignment research papers in our advanced reading group."
+                title="Advanced Fellowship"
+                description="Read state-of-the-art alignment research papers in our advanced fellowship."
                 linkText="Apply Now"
                 href="/programs"
               />

@@ -21,7 +21,7 @@ const Programs: FC = () => {
       icon: <BookOpen size={36} className="text-[#F66813]" />,
     },
     {
-      title: "Advanced Reading Group",
+      title: "Advanced Fellowship",
       description: `Each week, we select a technical paper from the AI alignment literature or related research and meet to individually read and then discuss them. We may also host talks from alignment researchers from time to time. Prior participation in our Intro to AI Alignment seminar is not necessary.`,
       prerequisites: "Prior ML knowledge helpful",
       duration: "8 weeks, ~1.5hr/wk",
@@ -57,7 +57,7 @@ const Programs: FC = () => {
             <SectionTitle>Explore Our Offerings</SectionTitle>
             <Paragraph className="mb-12 text-center max-w-3xl mx-auto">
               We provide various ways to engage with AI alignment through
-              structured seminars, reading groups, and workshops for all levels
+              structured seminars, fellowships, and workshops for all levels
               of experience. Plus, we provide free food at every event!
             </Paragraph>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
