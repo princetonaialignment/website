@@ -10,7 +10,7 @@ import useApplicationStore from "@/app/stores/useApplicationStore";
 
 const Programs: FC = () => {
   const applicationsOpen = useApplicationStore(
-    (state) => state.applicationsOpen
+    (state) => state.applicationsOpen,
   );
   const programs = [
     {
@@ -73,7 +73,10 @@ const Programs: FC = () => {
                     </h3>
                   </div>
                   {/* TODO: Probably a more sustainable way to do this instead of dangerouslySetInnerHTML? */}
-                  <div className="text-gray-600 mb-6" dangerouslySetInnerHTML={{ __html: program.description }}></div>
+                  <div
+                    className="text-gray-600 mb-6"
+                    dangerouslySetInnerHTML={{ __html: program.description }}
+                  ></div>
                   <div className="border-t border-gray-200 pt-4 mt-auto">
                     <p className="text-sm text-gray-600">
                       <strong className="text-[#F66813]">
@@ -114,10 +117,9 @@ const Programs: FC = () => {
               <Paragraph className="mb-8">
                 Applications for the current semester are closed. Please keep a
                 lookout for next semester&apos;s applications. In the meantime,
-                if you have any questions, feel free to reach out to our lead
-                organizer, Windsor Nguyen, at{" "}
+                if you have any questions, feel free to reach out at{" "}
                 <a
-                  href="mailto:windsor@princetonalignment.org"
+                  href="mailto:paia@princeton.edu"
                   className="text-[#F66813] hover:text-[#E55703] font-semibold"
                 >
                   windsor@princetonalignment.org

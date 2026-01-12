@@ -8,7 +8,7 @@ const About: FC = () => {
   const officers = [
     {
       name: "Owen Yang",
-      role: "President",
+      role: "President, Advanced Technical Reading Group Lead",
       bio: "Owen '26 is a senior in the Mathematics Department.",
       imageUrl: "/officers/owen.jpeg",
       linkedin: "https://www.linkedin.com/in/tigershark22/",
@@ -24,7 +24,7 @@ const About: FC = () => {
     },
     {
       name: "Jack Thompson",
-      role: "Lead Organizer, Intro/Governance Reading Group Facilitator",
+      role: "Governance Fellowship Lead",
       bio: `Jack '27 is a junior in the Computer Science Department.`,
       imageUrl: "/officers/jack.jpg",
       linkedin: "",
@@ -48,7 +48,7 @@ const About: FC = () => {
     },
     {
       name: "Elle Lazarski",
-      role: "Organizer, Intro Reading Group Facilitator",
+      role: "General Club Meeting Lead",
       bio: `Elle '26 is a senior in the Electrical & Computer Engineering Department.`,
       imageUrl: "/officers/elle.png",
       linkedin: "https://www.linkedin.com/in/elle-lazarski/",
@@ -78,7 +78,9 @@ const About: FC = () => {
         {/* Hero Section */}
         <section className="bg-gradient-to-r bg-[#F66813] text-white py-20 px-4">
           <div className="container mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">About Us</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
+              About Us
+            </h1>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
               The dedicated team behind PAIA.
             </p>
@@ -113,9 +115,9 @@ const About: FC = () => {
                 We&apos;re always looking for passionate individuals to join our
                 cause. Whether you&apos;re a student, researcher, or community
                 member, there are many ways to get involved and contribute to
-                the important work of AI alignment. If you are interested in 
-                helping to organize future iterations of PAIA, or you just want to 
-                schedule a coffee chat, please contact us below.
+                the important work of AI alignment. If you are interested in
+                helping to organize future iterations of PAIA, or you just want
+                to schedule a coffee chat, please contact us below.
               </Paragraph>
             </div>
             <a
