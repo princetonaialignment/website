@@ -50,6 +50,10 @@ const Alumni: FC = () => {
     { src: "/logos/dedalus.svg", alt: "Dedalus Labs", href: "https://www.dedaluslabs.ai/" },
     { src: "/logos/schwarzman.webp", alt: "Schwarzman Scholars", href: "https://www.schwarzmanscholars.org/" },
     { src: "/logos/ifp.jpg", alt: "Institute for Progress", href: "https://ifp.org/" },
+    { src: "/logos/spar.png", alt: "Supervised Program for Alignment Research", href: "https://sparai.org/" },
+    { src: "/logos/cais.webp", alt: "Center for AI Safety", href: "https://safe.ai/" },
+    { src: "/logos/mats.webp", alt: "ML Alignment & Theory Scholars", href: "https://www.matsprogram.org/" },
+    { src: "/logos/sentient-futures.png", alt: "Sentient Futures", href: "https://www.sentientfutures.ai/" },
   ];
 
   return (

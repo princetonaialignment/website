@@ -6,7 +6,7 @@ type ApplicationStore = {
 };
 
 const useApplicationStore = create<ApplicationStore>((set) => ({
-  applicationsOpen: true,
+  applicationsOpen: false,
   setApplicationsOpen: (open: boolean) => set({ applicationsOpen: open }),
 }));
 

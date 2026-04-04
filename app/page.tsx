@@ -64,11 +64,6 @@ const Home: FC = () => {
                   </ApplyButton>
                 </div>
               )}
-              <div className="flex justify-center">
-                <ApplyButton href="/contact">
-                  Get Involved
-                </ApplyButton>
-              </div>
             </div>
             <div className="text-xl mt-8">
               <Countdown deadline={deadline} onExpire={handleExpire} />
@@ -97,7 +92,7 @@ const Home: FC = () => {
               </Paragraph>
               <div className="flex justify-center pt-4">
                 <a
-                  href="https://forms.gle/ocD73Ron7rUBTjCr6"
+                  href="/contact"
                   className="bg-[#F66813] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#E55703] transition duration-300"
                 >
                   Get Involved
