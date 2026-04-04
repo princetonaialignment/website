@@ -59,6 +59,13 @@ const foundationPapers: Paper[] = [
 
 const ourPapers: Paper[] = [
   {
+    title: "Are Large Language Models Sensitive to the Motives Behind Communication?",
+    authors: "Wu et al.",
+    year: 2025,
+    url: "https://neurips.cc/virtual/2025/loc/san-diego/poster/115960",
+    description: `Investigates whether LLMs can recognize and account for human communicative intentions when evaluating information. Finds that while LLMs can discount biased sources in controlled settings, they struggle with real-world sponsored content — and that prompting models to consider source incentives significantly improves alignment with rational decision-making. Published at NeurIPS 2025.`,
+  },
+  {
     title: "CCS-Lib: A Python package to elicit latent knowledge from LLMs",
     authors: "Laurito et al.",
     year: 2025,

@@ -16,8 +16,8 @@ const Footer = () => (
             className="mx-auto my-2 cursor-pointer"
           />
         </Link>
-        <p className="text-sm">&copy; 2025 Princeton AI Alignment.</p>
-        <small className="text-xs">Last updated September 2025.</small>
+        <p className="text-sm">&copy; 2026 Princeton AI Alignment.</p>
+        <small className="text-xs">Last updated April 2026.</small>
       </div>
 
       {/* GitHub Icon aligned to the right */}

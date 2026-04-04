@@ -4,7 +4,7 @@ import { FC, useEffect } from "react";
 import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
 import Paragraph from "@/components/Paragraph";
-import { Button, ApplyButton } from "@/components/Button";
+import { ApplyButton } from "@/components/Button";
 import Card from "@/components/Card";
 import Footer from "@/components/Footer";
 import Alumni from "@/components/AlumniSection";
@@ -65,8 +65,8 @@ const Home: FC = () => {
                 </div>
               )}
               <div className="flex justify-center">
-                <ApplyButton href="https://docs.google.com/forms/d/e/1FAIpQLSddI4Nysw-NuNbVC4UetcfqdR_2d6BUIFemrNsM7hjgcnfOkQ/viewform?usp=sharing&ouid=110961928977131798504">
-                  Join our Discord and Listserv (open with Princeton email)
+                <ApplyButton href="/contact">
+                  Get Involved
                 </ApplyButton>
               </div>
             </div>
@@ -95,39 +95,18 @@ const Home: FC = () => {
               <Paragraph>
               Princeton AI Alignment is building a campus community for this work. We support Princeton students and researchers through fellowships, speaker events, project teams, and mentorship—helping members learn the field, contribute to research, and engage seriously with the technical and societal stakes of advanced AI.
               </Paragraph>
+              <div className="flex justify-center pt-4">
+                <a
+                  href="https://forms.gle/ocD73Ron7rUBTjCr6"
+                  className="bg-[#F66813] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#E55703] transition duration-300"
+                >
+                  Get Involved
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Workshops Section */}
-        <section id="workshops" className="py-28 px-6 bg-gray-100">
-          <div className="container mx-auto">
-            <SectionTitle>Workshops</SectionTitle>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-6">
-                <Paragraph>
-                  Hands-on workshops to learn about the engineering side of AI
-                  safety.
-                </Paragraph>
-                <Button
-                  href="https://github.com/princetonaialignment/workshops/"
-                  showArrow={true}
-                >
-                  Coming soon!
-                </Button>
-              </div>
-              <div className="bg-white p-8 rounded-lg shadow-xl">
-                <Image
-                  src="/sae-cover.png"
-                  alt="Workshop illustration"
-                  width={1940}
-                  height={1940}
-                  className="w-full h-auto rounded"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
 
         <Alumni />
 
@@ -138,14 +117,14 @@ const Home: FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card
                 icon={Book}
-                title="Introductory Seminars"
+                title="Intro Fellowships"
                 description="Join our 8-week seminar program to learn the fundamentals of AI alignment and governance."
                 linkText="Apply Now"
                 href="/programs"
               />
               <Card
                 icon={Users}
-                title="Advanced Fellowship"
+                title="Advanced Technical Fellowship"
                 description="Read state-of-the-art alignment research papers in our advanced fellowship."
                 linkText="Apply Now"
                 href="/programs"

@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { BookOpen, Calendar, Code } from "lucide-react";
+import { BookOpen, Calendar, Scale } from "lucide-react";
 import SectionTitle from "@/components/SectionTitle";
 import Paragraph from "@/components/Paragraph";
 import Footer from "@/components/Footer";
@@ -14,25 +14,25 @@ const Programs: FC = () => {
   );
   const programs = [
     {
-      title: "Intro to AI Alignment Seminar",
+      title: "Intro Technical Fellowship",
       description: `An overview of AI alignment, the field that aims to align advanced AI systems with human values and intentions. We cover the fundamentals such as interpreting the internals of neural networks, reinforcement learning from human feedback, and concrete ways that transformative AI might go really badly. Prior machine learning experience is not necessary! See our curriculum <a href="https://docs.google.com/document/d/1BDu8MiLbjQ-QBu-OsvQBQFVzCCnjVC8wnwmw3vklYfQ/pub" class="text-[#F66813] hover:underline">here</a>.`,
       prerequisites: "None",
       duration: "8 weeks, ~2hr/wk",
       icon: <BookOpen size={36} className="text-[#F66813]" />,
     },
     {
-      title: "Advanced Fellowship",
-      description: `Each week, we select a technical paper from the AI alignment literature or related research and meet to individually read and then discuss them. We may also host talks from alignment researchers from time to time. Prior participation in our Intro to AI Alignment seminar is not necessary.`,
+      title: "Advanced Technical Fellowship",
+      description: `Each week, we select a technical paper from the AI alignment literature or related research and meet to individually read and then discuss them. We may also host talks from alignment researchers from time to time. Prior participation in our Intro Technical Fellowship is not necessary.`,
       prerequisites: "Prior ML knowledge helpful",
       duration: "8 weeks, ~1.5hr/wk",
       icon: <Calendar size={36} className="text-[#F66813]" />,
     },
     {
-      title: "Coding Workshops",
-      description: `Live, hands-on coding workshops in GPU-accelerated Python notebooks. By the end of each session, participants will have their own working implementation of state-of-the-art techniques used by top AI research labs. Topics include finetuning, activation steering, and sleeper agents. These workshops were designed to be highly technical while still being as accessible as possible.`,
-      prerequisites: "Past programming experience helpful",
-      duration: "Every other week, ~1.5hr/workshop",
-      icon: <Code size={36} className="text-[#F66813]" />,
+      title: "Policy and Governance Fellowship",
+      description: `An exploration of the policy and governance landscape surrounding advanced AI. We read and discuss foundational and contemporary work on AI regulation, international coordination, and institutional design—examining how governments, research labs, and civil society can shape the development of AI to be safe and beneficial.`,
+      prerequisites: "None",
+      duration: "8 weeks, ~1.5hr/wk",
+      icon: <Scale size={36} className="text-[#F66813]" />,
     },
   ];
 
@@ -119,10 +119,10 @@ const Programs: FC = () => {
                 lookout for next semester&apos;s applications. In the meantime,
                 if you have any questions, feel free to reach out at{" "}
                 <a
-                  href="mailto:paia@princeton.edu"
+                  href="mailto:owen.yang@princeton.edu"
                   className="text-[#F66813] hover:text-[#E55703] font-semibold"
                 >
-                  windsor@princetonalignment.org
+                  owen.yang@princeton.edu
                 </a>
               </Paragraph>
             </div>

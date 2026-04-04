@@ -15,23 +15,14 @@ const Alumni: FC = () => {
   }) => {
     const [style, animate] = useSpring(() => ({
       transform: "translateY(0px)",
-      config: { tension: 200, friction: 15, duration: 200 }, // Adjusted for stability
+      config: { tension: 200, friction: 15, duration: 200 },
     }));
 
-    const handleMouseEnter = () => {
-      animate({ transform: "translateY(-10px)" });
-    };
-
-    const handleMouseLeave = () => {
-      animate({ transform: "translateY(0px)" });
-    };
+    const handleMouseEnter = () => animate({ transform: "translateY(-10px)" });
+    const handleMouseLeave = () => animate({ transform: "translateY(0px)" });
 
     return (
-      <Link
-        href={href}
-        passHref
-        className="flex-1 min-w-[200px] max-w-[250px]"
-        >
+      <Link href={href} passHref target="_blank" rel="noopener noreferrer" className="flex-1 min-w-[150px] max-w-[200px]">
         <div className="p-4 flex items-center justify-center h-full">
           <animated.div
             onMouseEnter={handleMouseEnter}
@@ -54,11 +45,11 @@ const Alumni: FC = () => {
 
   const logos = [
     { src: "/logos/openai.png", alt: "OpenAI", href: "https://openai.com" },
-    {
-      src: "/logos/anthropic.png",
-      alt: "Anthropic",
-      href: "https://www.anthropic.com",
-    },
+    { src: "/logos/anthropic.png", alt: "Anthropic", href: "https://www.anthropic.com" },
+    { src: "/logos/eleutherai.webp", alt: "EleutherAI", href: "https://www.eleuther.ai/" },
+    { src: "/logos/dedalus.svg", alt: "Dedalus Labs", href: "https://www.dedaluslabs.ai/" },
+    { src: "/logos/schwarzman.webp", alt: "Schwarzman Scholars", href: "https://www.schwarzmanscholars.org/" },
+    { src: "/logos/ifp.jpg", alt: "Institute for Progress", href: "https://ifp.org/" },
   ];
 
   return (
@@ -74,14 +65,9 @@ const Alumni: FC = () => {
           </Paragraph>
         </div>
 
-        <div className="flex flex-wrap justify-center items-stretch gap-8 mt-12">
+        <div className="flex flex-wrap justify-center items-center gap-8 mt-12">
           {logos.map((logo, index) => (
-            <LogoWithHover
-              key={index}
-              src={logo.src}
-              alt={logo.alt}
-              href={logo.href}
-            />
+            <LogoWithHover key={index} {...logo} />
           ))}
         </div>
       </div>
