@@ -62,6 +62,14 @@ const Team: FC = () => {
       linkedin: "https://www.linkedin.com/in/maggiewang0785/",
       email: "mw0785@princeton.edu",
     },
+    {
+      name: "Vedant Badoni",
+      role: "Tech Lead",
+      bio: "Vedant '28 is a sophomore in the Computer Science Department.",
+      imageUrl: "/officers/vedant.jpg",
+      linkedin: "https://www.linkedin.com/in/vedant-badoni-b5a67a20b/",
+      email: "vedant.badoni@princeton.edu",
+    },
   ];
 
   return (
