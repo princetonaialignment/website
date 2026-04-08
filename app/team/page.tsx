@@ -64,7 +64,7 @@ const Team: FC = () => {
     },
     {
       name: "Vedant Badoni",
-      role: "Tech Lead",
+      role: "Cluster Admin",
       bio: "Vedant '28 is a sophomore in the Computer Science Department.",
       imageUrl: "/officers/vedant.jpg",
       linkedin: "https://www.linkedin.com/in/vedant-badoni-b5a67a20b/",
