@@ -51,7 +51,7 @@ const Home: FC = () => {
           </div>
           <div className="container mx-auto text-center relative z-10">
             <h1 className="text-6xl font-bold mb-6 animate-fade-in-up max-w-4xl mx-auto px-8 leading-tight">
-              We&apos;re a group of Princeton students working to reduce catastrophic risk from advanced AI.
+              We&apos;re a group of Princeton students working to reduce <span className="transition-colors duration-300 hover:text-orange-200">catastrophic risk from advanced AI</span>.
             </h1>
             <a
               href="https://airtable.com/appurItpElOdUOB2m/pagDUkWLMIpZxdwFL/form"
