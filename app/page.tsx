@@ -8,7 +8,7 @@ import { ApplyButton } from "@/components/Button";
 import Card from "@/components/Card";
 import Footer from "@/components/Footer";
 import Alumni from "@/components/AlumniSection";
-import { Book, Briefcase, Users, Award, Code } from "lucide-react";
+import { Book, Briefcase, Users, Award, Code, ArrowRight } from "lucide-react";
 import Countdown from "@/components/Countdown";
 import useApplicationStore from "@/app/stores/useApplicationStore";
 
@@ -50,12 +50,18 @@ const Home: FC = () => {
             />
           </div>
           <div className="container mx-auto text-center relative z-10">
-            <h1 className="text-6xl font-bold mb-6 animate-fade-in-up">
-              Princeton AI Alignment
+            <h1 className="text-6xl font-bold mb-6 animate-fade-in-up max-w-4xl mx-auto px-8 leading-tight">
+              We&apos;re a group of Princeton students working to reduce catastrophic risk from advanced AI.
             </h1>
-            <p className="text-2xl mb-12 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
-              A community working to reduce risks from advanced AI.
-            </p>
+            <a
+              href="https://airtable.com/appurItpElOdUOB2m/pagDUkWLMIpZxdwFL/form"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-xl text-white/90 hover:text-white transition-colors duration-200 animate-fade-in-up animation-delay-300"
+            >
+              <span className="underline underline-offset-4">Join our mailing list.</span>
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
             <div className="flex flex-col items-center space-y-4 mt-6">
               {applicationsOpen && (
                 <div className="flex justify-center space-x-4">

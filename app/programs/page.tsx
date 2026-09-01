@@ -113,17 +113,27 @@ const Programs: FC = () => {
         ) : (
           <section className="py-20 px-6 bg-white">
             <div className="container mx-auto max-w-4xl text-center">
-              <SectionTitle>Applications Closed</SectionTitle>
+              <SectionTitle>Applications Coming Soon</SectionTitle>
               <Paragraph className="mb-8">
-                Applications for the current semester are closed. Please keep a
-                lookout for next semester&apos;s applications. In the meantime,
-                if you have any questions, feel free to reach out at{" "}
+                Applications for Fall &apos;26 are on their way! Please fill
+                out our{" "}
                 <a
-                  href="mailto:owen.yang@princeton.edu"
+                  href="https://airtable.com/appurItpElOdUOB2m/pag4oxPBAkvmWKw1V/form"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#F66813] hover:text-[#E55703] font-semibold"
                 >
-                  owen.yang@princeton.edu
+                  interest form
+                </a>{" "}
+                to get notified when they&apos;re out. If you have any
+                questions, reach out to{" "}
+                <a
+                  href="mailto:elianadu@princeton.edu"
+                  className="text-[#F66813] hover:text-[#E55703] font-semibold"
+                >
+                  elianadu@princeton.edu
                 </a>
+                .
               </Paragraph>
             </div>
           </section>

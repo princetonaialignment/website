@@ -1,10 +1,21 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useState } from "react";
 import SectionTitle from "@/components/SectionTitle";
 import Paragraph from "@/components/Paragraph";
 import Footer from "@/components/Footer";
-import { Mail, Send } from "lucide-react";
+import { Mail, Send, Video } from "lucide-react";
 
 const Contact: FC = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("elianadu@princeton.edu").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
   return (
     <div className="bg-gray-50 text-gray-800">
       <main className="pt-16">
@@ -29,8 +40,6 @@ const Contact: FC = () => {
                 <div className="flex-grow">
                   <SectionTitle>Stay Connected</SectionTitle>
                   <div className="mb-8 min-h-[100px]">
-                    {" "}
-                    {/* Set a minimum height */}
                     <Paragraph>
                       Join our mailing list to stay updated on the latest
                       events, research, and opportunities in AI alignment and
@@ -39,10 +48,10 @@ const Contact: FC = () => {
                   </div>
                 </div>
                 <div className="text-center mt-auto">
-                  {" "}
-                  {/* Push button to bottom */}
                   <a
-                    href="https://forms.gle/ocD73Ron7rUBTjCr6"
+                    href="https://airtable.com/appurItpElOdUOB2m/pagDUkWLMIpZxdwFL/form"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-[#F66813] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#E55703] transition duration-300"
                   >
                     <Send size={20} className="mr-2" />
@@ -59,23 +68,33 @@ const Contact: FC = () => {
                 <div className="flex-grow">
                   <SectionTitle>Contact Us</SectionTitle>
                   <div className="mb-8 min-h-[100px]">
-                    {" "}
-                    {/* Set a minimum height */}
                     <Paragraph>
                       Have a question or want to get involved? Reach out to us
-                      directly via email.
+                      directly via email or by booking a meeting.
                     </Paragraph>
                   </div>
                 </div>
-                <div className="text-center mt-auto">
-                  {" "}
-                  {/* Push button to bottom */}
+                <div className="text-center mt-auto flex flex-col sm:flex-row justify-center gap-4">
+                  <div className="relative group">
+                    <button
+                      onClick={handleCopyEmail}
+                      className="inline-flex items-center justify-center bg-[#F66813] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#E55703] transition duration-300"
+                    >
+                      <Mail size={20} className="mr-2" />
+                      Email Us
+                    </button>
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-gray-800 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                      {copied ? "Copied!" : "Click to copy"}
+                    </span>
+                  </div>
                   <a
-                    href="mailto:paia@princeton.edu"
+                    href="https://app.cal.com/elianadu/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-[#F66813] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#E55703] transition duration-300"
                   >
-                    <Mail size={20} className="mr-2" />
-                    Email Us
+                    <Video size={20} className="mr-2" />
+                    Meet with Us
                   </a>
                 </div>
               </div>

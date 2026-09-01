@@ -42,8 +42,8 @@ const Navbar: FC = () => {
     { name: "About", path: "/" },
     { name: "Team", path: "/team" },
     { name: "Programs", path: "/programs" },
-    { name: "Community", path: "/community" },
-    { name: "Papers", path: "/papers" },
+    { name: "Resources", path: "/community" },
+    { name: "Research", path: "/papers" },
     { name: "Contact", path: "/contact" },
   ];
 
