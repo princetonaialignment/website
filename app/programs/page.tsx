@@ -1,38 +1,44 @@
 "use client";
 
 import { FC } from "react";
-import { BookOpen, Calendar, Scale } from "lucide-react";
-import SectionTitle from "@/components/SectionTitle";
-import Paragraph from "@/components/Paragraph";
+import { BookOpen, Check, GraduationCap, Mountain } from "lucide-react";
 import Footer from "@/components/Footer";
 import { ApplyButton } from "@/components/Button";
-import useApplicationStore from "@/app/stores/useApplicationStore";
 
 const Programs: FC = () => {
-  const applicationsOpen = useApplicationStore(
-    (state) => state.applicationsOpen,
-  );
+  const featuredProgram = {
+    title: "AI Safety Fundamentals",
+    description: `The main way people get involved with Princeton AI Alignment—an 8-week reading group on why AI safety matters and what's being done about it. Covers AI's trajectory, misalignment, technical safety, policy, and careers in the field. Open to anyone, with preference for Princeton undergrad and grad students.`,
+    icon: <BookOpen size={40} className="text-white" />,
+    checklist: [
+      "8 weeks, ~2hr/wk",
+      "Free food at every session",
+      "No prior AI/ML background required",
+      "No reading required outside of meetings",
+    ],
+    applyLink: "https://airtable.com/appurItpElOdUOB2m/pagqdb4wWUWJrTv2N/form",
+    applyText: "Apply by Sept. 11",
+    curriculumLink:
+      "https://docs.google.com/document/d/1fgTlUj5Kc6aAkV4OVSU8KI3cKUGgPrq70miTOl-s5EU/edit?usp=sharing",
+  };
+
+  const linkClass = "text-[#F66813] hover:underline";
+
   const programs = [
     {
-      title: "Intro Technical Fellowship",
-      description: `An overview of AI alignment, the field that aims to align advanced AI systems with human values and intentions. We cover the fundamentals such as interpreting the internals of neural networks, reinforcement learning from human feedback, and concrete ways that transformative AI might go really badly. Prior machine learning experience is not necessary! See our curriculum <a href="https://docs.google.com/document/d/1BDu8MiLbjQ-QBu-OsvQBQFVzCCnjVC8wnwmw3vklYfQ/pub" class="text-[#F66813] hover:underline">here</a>.`,
-      prerequisites: "None",
-      duration: "8 weeks, ~2hr/wk",
-      icon: <BookOpen size={36} className="text-[#F66813]" />,
+      title: "Technical Reading Group",
+      description: `Each week, we select a technical paper from the AI alignment literature or related research and meet to individually read and then discuss them. Prior participation in our Fundamentals Fellowship is highly recommended for those without AI safety context. More information coming about the Technical Reading Group soon -- <a href="https://airtable.com/appurItpElOdUOB2m/pagDUkWLMIpZxdwFL/form" target="_blank" rel="noopener noreferrer" class="${linkClass}">sign up on our mailing list</a> to stay notified.`,
+      icon: <BookOpen size={28} className="text-[#F66813]" />,
     },
     {
-      title: "Advanced Technical Fellowship",
-      description: `Each week, we select a technical paper from the AI alignment literature or related research and meet to individually read and then discuss them. We may also host talks from alignment researchers from time to time. Prior participation in our Intro Technical Fellowship is not necessary.`,
-      prerequisites: "Prior ML knowledge helpful",
-      duration: "8 weeks, ~1.5hr/wk",
-      icon: <Calendar size={36} className="text-[#F66813]" />,
+      title: "Retreats and Conferences",
+      description: `We send our members to AI safety retreats across the country, including <a href="https://www.globalchallengesproject.org/" target="_blank" rel="noopener noreferrer" class="${linkClass}">GCP workshops</a>, <a href="https://aisst.ai/workshops" target="_blank" rel="noopener noreferrer" class="${linkClass}">AISST/MAIA retreats</a>, and retreats for university group organizers. We also support our members in attending AI safety-related conferences, such as <a href="https://controlconf.org/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Control Conf</a>, <a href="https://dcminiconf.com/" target="_blank" rel="noopener noreferrer" class="${linkClass}">AI Governance DCMC</a>, and <a href="https://www.effectivealtruism.org/ea-global" target="_blank" rel="noopener noreferrer" class="${linkClass}">EA Globals</a>.`,
+      icon: <Mountain size={28} className="text-[#F66813]" />,
     },
     {
-      title: "Policy and Governance Fellowship",
-      description: `An exploration of the policy and governance landscape surrounding advanced AI. We read and discuss foundational and contemporary work on AI regulation, international coordination, and institutional design—examining how governments, research labs, and civil society can shape the development of AI to be safe and beneficial.`,
-      prerequisites: "None",
-      duration: "8 weeks, ~1.5hr/wk",
-      icon: <Scale size={36} className="text-[#F66813]" />,
+      title: "Learning and Career Support",
+      description: `We want to accelerate your engagement with AI safety! If you’re excited to learn more beyond the pace of the fellowship, we’re here to guide you. We’ll keep you informed about internship opportunities like <a href="https://www.matsprogram.org/" target="_blank" rel="noopener noreferrer" class="${linkClass}">MATS Research</a>, <a href="https://horizonpublicservice.org/programs/become-a-fellow/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Horizon Policy Fellows</a>, or the <a href="https://generatorresidency.org/" target="_blank" rel="noopener noreferrer" class="${linkClass}">Generator Residency</a>. Please don’t hesitate to reach out to us to talk about how we can support your personal growth and your career in the field.`,
+      icon: <GraduationCap size={28} className="text-[#F66813]" />,
     },
   ];
 
@@ -46,7 +52,9 @@ const Programs: FC = () => {
               Our Programs
             </h1>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Learn all about AI alignment.
+              We provide ways to engage with AI alignment for all levels of
+              experience through fellowships, socials, and speaker events.
+              Plus, we provide free food at every event!
             </p>
           </div>
         </section>
@@ -54,90 +62,66 @@ const Programs: FC = () => {
         {/* Programs Section */}
         <section className="py-20 px-6 bg-gray-100">
           <div className="container mx-auto max-w-6xl">
-            <SectionTitle>Explore Our Offerings</SectionTitle>
-            <Paragraph className="mb-12 text-center max-w-3xl mx-auto">
-              We provide various ways to engage with AI alignment through
-              structured seminars, fellowships, and workshops for all levels
-              of experience. Plus, we provide free food at every event!
-            </Paragraph>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Featured Program */}
+            <div className="bg-[#F66813] rounded-xl shadow-lg p-8 md:p-10 mb-10">
+              <div className="flex items-center mb-4">
+                {featuredProgram.icon}
+                <h3 className="ml-3 text-2xl md:text-3xl font-bold text-white">
+                  {featuredProgram.title}
+                </h3>
+              </div>
+              <p className="text-white/90 mb-6 max-w-4xl">
+                {featuredProgram.description}
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 mb-8">
+                {featuredProgram.checklist.map((item, index) => (
+                  <div key={index} className="flex items-center text-white">
+                    <Check size={18} className="mr-2 flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <ApplyButton
+                  href={featuredProgram.applyLink}
+                  external
+                  className="!bg-white !text-[#F66813] hover:!bg-gray-100"
+                >
+                  {featuredProgram.applyText}
+                </ApplyButton>
+                <ApplyButton
+                  href={featuredProgram.curriculumLink}
+                  external
+                  className="!bg-transparent border-2 border-white !text-white hover:!bg-white/10"
+                >
+                  See the curriculum
+                </ApplyButton>
+              </div>
+            </div>
+
+            {/* Other Programs */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {programs.map((program, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col h-full"
+                  className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-5 flex flex-col h-full"
                 >
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-3">
                     {program.icon}
-                    <h3 className="ml-3 text-lg font-bold text-gray-800">
+                    <h3 className="ml-2 text-base font-bold text-gray-800">
                       {program.title}
                     </h3>
                   </div>
-                  {/* TODO: Probably a more sustainable way to do this instead of dangerouslySetInnerHTML? */}
                   <div
-                    className="text-gray-600 mb-6"
+                    className="text-sm text-gray-600"
                     dangerouslySetInnerHTML={{ __html: program.description }}
                   ></div>
-                  <div className="border-t border-gray-200 pt-4 mt-auto">
-                    <p className="text-sm text-gray-600">
-                      <strong className="text-[#F66813]">
-                        Prerequisites:{" "}
-                      </strong>
-                      {program.prerequisites}
-                      <br />
-                      <strong className="text-[#F66813]">Duration: </strong>
-                      {program.duration}
-                    </p>
-                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Conditional Get Involved Section */}
-        {applicationsOpen ? (
-          <section className="py-20 px-6 bg-white">
-            <div className="container mx-auto max-w-4xl text-center">
-              <SectionTitle>Join PAIA</SectionTitle>
-              <Paragraph className="mb-8">
-                Whether you&apos;re new to AI alignment or an experienced
-                researcher, we have a place for you in our community.
-              </Paragraph>
-              <div className="flex justify-center space-x-4 mt-6">
-                <ApplyButton href="https://docs.google.com/forms/d/e/1FAIpQLSfah5RTTUt5cNT9367MHdqgZMLIdOGWn0ULzEn4unAzSw9aoQ/viewform">
-                  Apply to our Seminars
-                </ApplyButton>
-              </div>
-            </div>
-          </section>
-        ) : (
-          <section className="py-20 px-6 bg-white">
-            <div className="container mx-auto max-w-4xl text-center">
-              <SectionTitle>Applications Coming Soon</SectionTitle>
-              <Paragraph className="mb-8">
-                Applications for Fall &apos;26 are on their way! Please fill
-                out our{" "}
-                <a
-                  href="https://airtable.com/appurItpElOdUOB2m/pag4oxPBAkvmWKw1V/form"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#F66813] hover:text-[#E55703] font-semibold"
-                >
-                  interest form
-                </a>{" "}
-                to get notified when they&apos;re out. If you have any
-                questions, reach out to{" "}
-                <a
-                  href="mailto:elianadu@princeton.edu"
-                  className="text-[#F66813] hover:text-[#E55703] font-semibold"
-                >
-                  elianadu@princeton.edu
-                </a>
-                .
-              </Paragraph>
-            </div>
-          </section>
-        )}
       </main>
       <Footer />
     </div>

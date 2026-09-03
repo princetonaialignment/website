@@ -20,6 +20,21 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .hover-underline-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    background-size: 0% 3px;
+    padding-bottom: 0.1em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transition: background-size 0.6s ease-in-out;
+  }
+
+  .hover-underline-draw:hover {
+    background-size: 100% 3px;
+  }
 }
 
 @layer base {

@@ -1,205 +1,116 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import SectionTitle from "@/components/SectionTitle";
-import Paragraph from "@/components/Paragraph";
 import Footer from "@/components/Footer";
-import {
-  Globe,
-  Users,
-  ArrowRight,
-  Briefcase,
-  School,
-  Edit,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-type ResourceCardProps = {
-  icon: ReactNode;
+type ResourceLink = {
   title: string;
   description: string;
-  links: { text: string; url: string }[];
+  url: string;
 };
 
-const ResourceCard: FC<ResourceCardProps> = ({
-  icon,
-  title,
-  description,
-  links,
-}) => (
-  <div className="bg-white rounded-lg shadow-md p-6 flex flex-col h-full min-h-[400px]">
-    <div className="flex items-center mb-4">
-      <div className="text-[#F66813] mr-3">{icon}</div>
-      <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
-    </div>
+const LinkCard: FC<ResourceLink> = ({ title, description, url }) => (
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-white rounded-lg shadow-md p-6 flex flex-col h-full hover:shadow-lg transition-shadow duration-300"
+  >
+    <h3 className="text-lg md:text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600 mb-4 flex-grow">{description}</p>
-    <ul className="space-y-2">
-      {links.map((link, index) => (
-        <li key={index}>
-          <a
-            href={link.url}
-            className="text-[#F66813] hover:text-[#E55703] flex items-center"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <ArrowRight size={16} className="mr-1 flex-shrink-0" />
-            <span>{link.text}</span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
+    <span className="text-[#F66813] flex items-center mt-auto">
+      <ArrowRight size={16} className="mr-1 flex-shrink-0" />
+      Visit
+    </span>
+  </a>
 );
 
 const Community: FC = () => {
-  const resources = [
+  const startHere: ResourceLink[] = [
     {
-      icon: <Globe size={24} />,
-      title: "Online Courses",
+      title: "The Problem",
       description:
-        "Free online courses to deepen your understanding of AI alignment.",
-      links: [
-        {
-          text: "Princeton AI Safety Course (COS 597Q)",
-          url: "https://sites.google.com/view/cos598aisafety/",
-        },
-        {
-          text: "Intro to AI Safety, Ethics, and Society",
-          url: "https://www.aisafetybook.com/",
-        },
-        {
-          text: "AGI Safety Fundamentals",
-          url: "https://aisafetyfundamentals.com/",
-        },
-        {
-          text: "Intro to ML Safety",
-          url: "https://course.mlsafety.org/",
-        },
-        {
-          text: "CSC2547: AI Alignment",
-          url: "https://alignment-w2024.notion.site/CSC2547-AI-Alignment-b44359978f3a4a8f95c90adb0a6e7d53",
-        },
-      ],
+        "MIRI's introduction to why smarter-than-human AI could be an existential risk.",
+      url: "https://www.lesswrong.com/posts/kgb58RL88YChkkBNf/the-problem",
     },
     {
-      icon: <Users size={24} />,
-      title: "Research Groups",
-      description: "Leading organizations in AI alignment research.",
-      links: [
-        { text: "Anthropic", url: "https://www.anthropic.com/research" },
-        {
-          text: "OpenAI",
-          url: "https://openai.com/safety/",
-        },
-        {
-          text: "Redwood Research",
-          url: "https://www.redwoodresearch.org/research",
-        },
-        {
-          text: "Center for Human-Compatible AI",
-          url: "https://humancompatible.ai/research",
-        },
-        {
-          text: "Machine Intelligence Research Institute",
-          url: "https://intelligence.org/research/",
-        },
-      ],
+      title: "aisafety.com",
+      description:
+        "A hub for AI existential safety, with curated lists of jobs, communities, courses, and more.",
+      url: "https://aisafety.com/",
     },
     {
-      icon: <Briefcase size={24} />,
-      title: "Career Resources",
-      description: "Explore career opportunities in AI safety and alignment.",
-      links: [
-        { text: "AI Safety Support", url: "https://aisafetysupport.org/" },
-        {
-          text: "AI Safety Job Board",
-          url: "https://www.aisafety.careers/opportunities",
-        },
-        {
-          text: "80,000 Hours AI Safety Career Guide",
-          url: "https://80000hours.org/problem-profiles/artificial-intelligence/",
-        },
-        {
-          text: "80,000 Hours Job Board",
-          url: "https://jobs.80000hours.org/",
-        },
-        {
-          text: "Working in AI Policy",
-          url: "https://80000hours.org/articles/ai-policy-guide/",
-        },
-      ],
-    },
-    {
-      icon: <School size={24} />,
-      title: "Academic Programs",
-      description: "AI safety and alignment efforts at other universities.",
-      links: [
-        {
-          text: "Berkeley AI Safety Initiative",
-          url: "https://berkeleyaisafety.com/",
-        },
-        { text: "MIT AI Alignment", url: "https://mitalignment.org/" },
-        {
-          text: "Stanford Center for AI Safety",
-          url: "https://aisafety.stanford.edu/",
-        },
-        { text: "Harvard AI Safety Student Team", url: "https://haist.ai/" },
-        {
-          text: "AI Safety Initiative at Georgia Tech",
-          url: "https://www.aisi.dev/",
-        },
-      ],
+      title: "AI Safety Opportunities",
+      description:
+        "A live directory of AI safety programs, fellowships, and openings.",
+      url: "https://aisopportunities.com/",
     },
   ];
 
-  const blogs = [
+  const community: ResourceLink[] = [
     {
-      title: "AI Alignment Forum",
-      description: "A hub for technical research on beneficial AI.",
+      title: "The Alignment Forum",
+      description: "A hub for technical AI alignment research and discussion.",
       url: "https://www.alignmentforum.org/",
     },
     {
       title: "LessWrong",
       description:
-        "A community blog focused on refining the art of human rationality.",
+        "Community blog focusing on rationality and AI safety.",
       url: "https://www.lesswrong.com/",
     },
+  ];
+
+  const blogs: ResourceLink[] = [
     {
-      title: "AI Impacts",
+      title: "Redwood Research Blog",
       description:
-        "Exploring the potential consequences of advanced artificial intelligence.",
-      url: "https://aiimpacts.org/",
+        "Technical AI alignment research and interpretability work.",
+      url: "https://blog.redwoodresearch.org",
     },
     {
-      title: "Paul Christiano's Blog",
-      description: "Paul Christiano's insights on value alignment.",
-      url: "https://ai-alignment.com/",
-    },
-    {
-      title: "colah's blog",
+      title: "Unresolved Debates About the Future of AI",
       description:
-        "Christopher Olah's deep dives into neural networks and mechanistic interpretability.",
-      url: "https://colah.github.io/",
+        "Helen Toner outlines key disagreements shaping AI governance and long-term safety priorities.",
+      url: "https://helentoner.substack.com/p/unresolved-debates-about-the-future",
     },
     {
-      title: "Bounded Regret",
+      title: "Technological Optimism and Appropriate Fear",
       description:
-        "Jacob Steinhardt's thoughts on AI safety and the future of AI.",
-      url: "https://bounded-regret.ghost.io/",
+        "Jack Clark's newsletter on balancing optimism and caution in AI development.",
+      url: "https://importai.substack.com/p/import-ai-431-technological-optimism",
     },
     {
-      title: "For Our Posterity",
+      title: "Planned Obsolescence",
       description:
-        "Leopold Aschenbrenner's perspectives on long-term thinking and existential risk.",
-      url: "https://www.forourposterity.com/",
+        "Ajeya Cotra's Substack on preparing for a future where AI transforms nearly everything.",
+      url: "https://www.planned-obsolescence.org/",
     },
     {
-      title: "Lil'Log",
-      description: "Lilian Weng's blog on practical AI safety and alignment.",
-      url: "https://lilianweng.github.io/",
+      title: "Don't Worry About the Vase",
+      description: "Zvi Mowshowitz's weekly roundup of AI news and analysis.",
+      url: "https://thezvi.substack.com/",
     },
     {
-      title: "Neel Nanda's Blog",
+      title: "Transformer",
       description:
-        "Neel Nanda's reflections on AI development and personal growth.",
-      url: "https://www.neelnanda.io/",
+        "Shakeel Hashim's newsletter on the power and politics of transformative AI.",
+      url: "https://www.transformernews.ai/",
+    },
+  ];
+
+  const podcasts: ResourceLink[] = [
+    {
+      title: "The 80,000 Hours Podcast",
+      description:
+        "In-depth interviews about the world's most pressing problems, including AI safety.",
+      url: "https://80000hours.org/podcast/",
+    },
+    {
+      title: "Dwarkesh Podcast",
+      description:
+        "Deep conversations with leading AI researchers and thinkers about the future of AI.",
+      url: "https://www.youtube.com/@DwarkeshPatel",
     },
   ];
 
@@ -210,7 +121,7 @@ const Community: FC = () => {
         <section className="bg-gradient-to-r bg-[#F66813] text-white py-20 px-4 relative overflow-hidden">
           <div className="container mx-auto text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Community Resources
+              Resources
             </h1>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
               Connect with the AI alignment community.
@@ -218,80 +129,88 @@ const Community: FC = () => {
           </div>
         </section>
 
-        {/* Resources Section */}
+        {/* Start Here Section */}
         <section className="py-20 px-6 bg-gray-50">
           <div className="container mx-auto max-w-6xl">
-            <SectionTitle>AI Alignment Resources</SectionTitle>
-            <Paragraph className="mb-12 text-center max-w-3xl mx-auto">
-              Dive into the world of AI alignment with our curated list of
-              resources. Whether you&apos;re new to the field or looking to
-              deepen your understanding, we&apos;ve got you covered.
-            </Paragraph>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {resources.map((resource, index) => (
-                <ResourceCard key={index} {...resource} />
+            <SectionTitle>Start Here</SectionTitle>
+            <div className="mb-8 rounded-lg overflow-hidden shadow-md bg-white w-full md:w-2/3 mx-auto">
+              <div className="relative w-full aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/5KVDDfAkRgc"
+                  title="We're Not Ready for Superintelligence"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg md:text-xl font-semibold">
+                  We&apos;re Not Ready for Superintelligence
+                </h3>
+                <p className="text-gray-600">AI In Context</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {startHere.map((link, index) => (
+                <LinkCard key={index} {...link} />
               ))}
             </div>
           </div>
         </section>
 
-        {/* Blogs We Like Section */}
+        {/* Community Section */}
         <section className="py-20 px-6 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <SectionTitle>Blogs We Like</SectionTitle>
-            <Paragraph className="mb-12 text-center max-w-3xl mx-auto">
-              Stay informed with these insightful blogs covering AI alignment
-              and the latest developments in AI research.
-            </Paragraph>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogs.map((blog, index) => (
+            <SectionTitle>Community</SectionTitle>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {community.map((link, index) => (
+                <LinkCard key={index} {...link} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Blogs & Articles Section */}
+        <section className="py-20 px-6 bg-gray-50">
+          <div className="container mx-auto max-w-6xl">
+            <SectionTitle>Blogs &amp; Articles</SectionTitle>
+            <div className="flex flex-wrap justify-center gap-8">
+              {blogs.map((link, index) => (
                 <div
                   key={index}
-                  className="bg-gray-100 rounded-lg p-6 flex flex-col h-full min-h-[350px]"
+                  className="w-full sm:w-[calc(50%-16px)] lg:w-[calc(25%-24px)]"
                 >
-                  <div className="flex items-center mb-4">
-                    <Edit size={24} className="text-[#F66813] mr-3" />
-                    <h3 className="text-lg md:text-xl font-semibold">
-                      {blog.title}
-                    </h3>
-                  </div>
-                  <p className="text-gray-600 mb-4 flex-grow">
-                    {blog.description}
-                  </p>
-                  <a
-                    href={blog.url}
-                    className="text-[#F66813] hover:text-[#E55703] flex items-center mt-auto"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ArrowRight size={16} className="mr-1 flex-shrink-0" />
-                    <span>Visit Blog</span>
-                  </a>
+                  <LinkCard {...link} />
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Community Engagement Section */}
+        {/* Podcasts Section */}
+        <section className="py-20 px-6 bg-white">
+          <div className="container mx-auto max-w-6xl">
+            <SectionTitle>Podcasts</SectionTitle>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {podcasts.map((link, index) => (
+                <LinkCard key={index} {...link} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Full Resource List Section */}
         <section className="py-20 px-6 bg-gray-50">
           <div className="container mx-auto max-w-4xl text-center">
-            <SectionTitle>Join The Discussion</SectionTitle>
-            <Paragraph className="mb-8">
-              Join the AI safety community, participate in discussions, and
-              collaborate on research.
-            </Paragraph>
+            <SectionTitle>Want More?</SectionTitle>
             <div className="bg-white shadow-md rounded-lg p-6 inline-block">
-              <h3 className="font-semibold text-lg mb-4">
-                AI Safety Communities
-              </h3>
               <a
-                href="https://www.aisafety.com/communities"
-                className="text-[#F66813] hover:text-[#E55703] flex items-center justify-center"
+                href="https://docs.google.com/document/d/1F94lHey4U5Y_GkRjhpwju2o77yZs_jRlwHxy0yefkEQ/edit?usp=sharing"
+                className="text-[#F66813] hover:text-[#E55703] flex items-center justify-center font-semibold"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Explore AI Safety Communities
+                See the Full Resource List
                 <ArrowRight size={20} className="ml-2" />
               </a>
             </div>

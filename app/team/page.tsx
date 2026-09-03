@@ -1,6 +1,4 @@
 import { FC } from "react";
-import SectionTitle from "@/components/SectionTitle";
-import Paragraph from "@/components/Paragraph";
 import Footer from "@/components/Footer";
 import OfficerCard from "@/components/OfficerCard";
 
@@ -9,7 +7,7 @@ const Team: FC = () => {
     {
       name: "Eliana Du",
       role: "Director",
-      bio: `Eliana '28 is a junior in the Computer Science Department and a prospective Creative Writing minor.`,
+      bio: `Eliana '28 is a junior in the Computer Science Department and a prospective Creative Writing minor. She loves <a href="https://curius.app/eliana-du" target="_blank" rel="noopener noreferrer" class="text-[#F66813] hover:underline">reading</a>, <a href="https://elianadu.substack.com/" target="_blank" rel="noopener noreferrer" class="text-[#F66813] hover:underline">writing</a>, three-item lists, and subverting expectations.`,
       imageUrl: "/officers/eliana.jpeg",
       linkedin: "https://www.linkedin.com/in/elianadu/",
       email: "elianadu@princeton.edu",
@@ -18,7 +16,7 @@ const Team: FC = () => {
     {
       name: "Eric Chen",
       role: "Deputy Director",
-      bio: `Eric '29 is a sophomore in the Computer Science Department and a prospective Linguistics and Education minor.`,
+      bio: `Eric '29 is a sophomore in the Computer Science Department and a prospective Linguistics and Education minor. He's a passionate polyglot and possibly the most enthusiastic person you've met.`,
       imageUrl: "/officers/eric.png",
       linkedin: "https://www.linkedin.com/in/eric--c/",
       email: "ec4155@princeton.edu",
@@ -26,7 +24,7 @@ const Team: FC = () => {
     {
       name: "John Emmett Souder",
       role: "Fellowship Lead",
-      bio: "Emmett '27 is a senior in the ORFE department minoring in Energy.",
+      bio: "Emmett '27 is a senior in the ORFE department minoring in Energy. He's super excited to be here!",
       imageUrl: "/officers/emmett.jpeg",
       linkedin: "https://www.linkedin.com/in/john-emmett-souder/",
       email: "js0735@princeton.edu",
@@ -67,17 +65,14 @@ const Team: FC = () => {
         {/* Team Section */}
         <section className="py-20 md:py-28 px-6 bg-gray-100">
           <div className="container mx-auto max-w-6xl">
-            <SectionTitle>Meet Our Team</SectionTitle>
-            <div className="mb-12 text-center">
-              <Paragraph>
-                We aim to foster a vibrant community for students and
-                researchers committed to addressing the critical issues
-                surrounding AI safety and alignment.
-              </Paragraph>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex flex-wrap justify-center gap-8">
               {officers.map((officer) => (
-                <OfficerCard key={officer.name} {...officer} />
+                <div
+                  key={officer.name}
+                  className="w-full sm:w-[calc((100%-32px)/2)] lg:w-[calc((100%-64px)/3)]"
+                >
+                  <OfficerCard {...officer} />
+                </div>
               ))}
             </div>
           </div>

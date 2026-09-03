@@ -17,7 +17,7 @@ const Footer = () => (
           />
         </Link>
         <p className="text-sm">&copy; 2026 Princeton AI Alignment.</p>
-        <small className="text-xs">Last updated April 2026.</small>
+        <small className="text-xs">Last updated September 2026.</small>
       </div>
 
       {/* GitHub Icon aligned to the right */}

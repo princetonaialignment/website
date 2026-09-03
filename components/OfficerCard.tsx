@@ -50,7 +50,10 @@ const OfficerCard: FC<OfficerProps> = ({
       <h3 className="text-xl font-semibold mb-2">{name}</h3>
       <p className="text-gray-600 mb-4 text-center">{role}</p>
       <div className="h-32 overflow-y-auto mb-6 w-full">
-        <p className="text-gray-800 text-center">{bio}</p>
+        <p
+          className="text-gray-800 text-center"
+          dangerouslySetInnerHTML={{ __html: bio }}
+        ></p>
       </div>
       <div className="flex space-x-4 mt-auto">
         {github && (

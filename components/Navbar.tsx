@@ -39,11 +39,9 @@ const Navbar: FC = () => {
   }, []);
 
   const navItems = [
-    { name: "About", path: "/" },
     { name: "Team", path: "/team" },
     { name: "Programs", path: "/programs" },
     { name: "Resources", path: "/community" },
-    { name: "Research", path: "/papers" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -60,7 +58,7 @@ const Navbar: FC = () => {
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="text-white transition-colors duration-150"
+              className="text-white hover:text-orange-300 transition-colors duration-300"
             >
               {isMounted && (
                 <AnimatePresence mode="wait">

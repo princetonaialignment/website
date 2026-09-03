@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Libre_Baskerville, Barlow } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ApplicationBanner from "@/components/ApplicationBanner";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={`${barlow.variable} ${libreBaskerville.variable} font-sans subpixel-antialiased`}>
         <Navbar />
         {children}
+        <ApplicationBanner />
         <Analytics />
         <SpeedInsights />
       </body>

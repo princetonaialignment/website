@@ -1,11 +1,13 @@
 import { FC, ReactNode } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 type ButtonProps = {
   href: string;
   children: ReactNode;
   showArrow?: boolean;
+  external?: boolean;
+  showExternalIcon?: boolean;
   className?: string; // Add className prop
 };
 
@@ -13,15 +15,22 @@ const ButtonBase: FC<ButtonProps> = ({
   href,
   children,
   showArrow = false,
-  className = "", 
+  external = false,
+  showExternalIcon = true,
+  className = "",
 }) => (
   <Link
     href={href}
+    target={external ? "_blank" : undefined}
+    rel={external ? "noopener noreferrer" : undefined}
     className={`inline-flex items-center px-6 py-3 rounded-full font-semibold transition duration-300 ${className}`}
   >
     <>
       {children}
       {showArrow && <ArrowRight className="ml-2 h-5 w-5" />}
+      {external && showExternalIcon && (
+        <ExternalLink className="ml-2 h-4 w-4" />
+      )}
     </>
   </Link>
 );
