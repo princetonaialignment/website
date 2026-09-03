@@ -95,7 +95,7 @@ const Home: FC = () => {
             />
           </div>
           <div className="container mx-auto text-center relative z-10">
-            <h1 className="text-6xl font-bold mb-6 animate-fade-in-up max-w-4xl mx-auto px-8 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up max-w-4xl mx-auto px-4 sm:px-8 leading-tight break-words">
               We&apos;re a group of Princeton students working to reduce <span className="hover-underline-draw">catastrophic risk from advanced AI</span>.
             </h1>
             <div className="flex flex-col items-center space-y-4 mt-6 animate-fade-in-up animation-delay-300">
